@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login.show');
+Route::post('/login', 'LoginController@proseslogin')->name('login.proses');
+Route::get('/sign-out', function () {
+    session()->flush();
+    return redirect('/');
+});
+Route::group(['middleware' => 'isLogin'], function () {
+    Route::get('/', 'DashboardController@index');
 });
