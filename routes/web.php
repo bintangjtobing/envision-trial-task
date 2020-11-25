@@ -23,5 +23,7 @@ Route::get('/sign-out', function () {
     return redirect('/');
 });
 Route::group(['middleware' => 'isLogin'], function () {
-    Route::get('/', 'DashboardController@index');
+    Route::any('{any}', function () {
+        return view('welcome');
+    })->where('any', '.*');
 });

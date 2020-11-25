@@ -7,26 +7,71 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueRouter from 'vue-router';
+import VueAxios from 'vue-axios';
+import Axios from 'axios';
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.use(VueRouter, VueAxios, Axios);
+import Home from './components/Home.vue';
+import User from './components/user.vue';
+import File from './components/NewFile.vue';
+import Data from './components/DataResult.vue';
+import Guide from './components/UserGuide.vue';
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+const routes = [{
+        name: 'home',
+        path: '/',
+        component: Home,
+        meta: {
+            title: 'Home | Dashboard mineCare'
+        }
+    },
+    {
+        path: '/user-managements',
+        component: User,
+        meta: {
+            title: 'User Managements | Dashboard mineCare'
+        }
+    },
+    {
+        path: '/new-file',
+        component: File,
+        meta: {
+            title: 'New File | Dashboard mineCare'
+        }
+    },
+    {
+        path: '/data-results',
+        component: Data,
+        meta: {
+            title: 'Data Results | Dashboard mineCare'
+        }
+    },
+    {
+        path: '/user-guides',
+        component: Guide,
+        meta: {
+            title: 'User Guides | Dashboard mineCare'
+        }
+    }
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+]
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app',
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes,
+    linkActiveClass: 'mm-active'
 });
+new Vue(Vue.util.extend({
+    router
+}, App)).$mount('#App');
+
+// META TITLE
+export default {
+    router,
+    watch: {
+        $route: function (to) {
+            document.title = to.meta.title;
+        }
+    },
+}
