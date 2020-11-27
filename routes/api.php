@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Http\Request;
 
 /*
@@ -15,4 +16,11 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::post('add-chemical-list', 'DashboardController@addChemical');
+Route::get('chemicals', 'DashboardController@getChemicals');
+Route::middleware('auth:api')->group(function () {
+    Route::get('check-file', 'DashboardController@checkFile');
+    Route::get('chemicaldatas', 'DashboardController@getChemicalDatas');
+    Route::post('chemicaldatas', 'DashboardController@addChemicalData');
 });

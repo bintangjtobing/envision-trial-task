@@ -22,7 +22,12 @@ Route::get('/sign-out', function () {
     session()->flush();
     return redirect('/');
 });
-Route::group(['middleware' => 'isLogin'], function () {
+Route::get('check-file', 'DashboardController@checkFile');
+Route::post('add-chemical-list', 'DashboardController@addChemical');
+Route::get('chemicals', 'DashboardController@getChemicals');
+Route::get('chemicaldatas', 'DashboardController@getChemicalDatas');
+Route::post('chemicaldatas', 'DashboardController@addChemicalData');
+Route::group(['middleware' => 'auth'], function () {
     Route::any('{any}', function () {
         return view('welcome');
     })->where('any', '.*');

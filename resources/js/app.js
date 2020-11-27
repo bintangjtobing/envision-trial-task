@@ -11,12 +11,15 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import Axios from 'axios';
 
+// Axios.defaults.withCredentials = true
+
 Vue.use(VueRouter, VueAxios, Axios);
 import Home from './components/Home.vue';
 import User from './components/user.vue';
-import File from './components/NewFile.vue';
+import File from './components/NewFileS.vue';
 import Data from './components/DataResult.vue';
 import Guide from './components/UserGuide.vue';
+import ChemicalList from './components/ChemicalData.vue';
 
 const routes = [{
         name: 'home',
@@ -53,7 +56,15 @@ const routes = [{
         meta: {
             title: 'User Guides | Dashboard mineCare'
         }
+    },
+    {
+        path: '/chemical-data-lists',
+        component: ChemicalList,
+        meta: {
+            title: 'Chemical Data Lists | Dashboard mineCare'
+        }
     }
+
 
 ]
 
@@ -62,6 +73,7 @@ const router = new VueRouter({
     routes: routes,
     linkActiveClass: 'mm-active'
 });
+
 new Vue(Vue.util.extend({
     router
 }, App)).$mount('#App');

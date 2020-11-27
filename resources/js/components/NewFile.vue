@@ -316,17 +316,23 @@
                                             <div class="col-md-5">
                                                 <div class="position-relative form-group">
                                                     <label for="">Erosion</label>
-                                                    <select name="Erosion" id="" class="form-control custom-select">
-                                                        <option value="Observation">Observation</option>
-                                                        <option value="RUSLE Model">RUSLE Model</option>
-                                                        <option value="Not Both">Not Both</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="position-relative form-group">
-                                                    <label for="" style="color: #fff;">adsqwe</label>
-                                                    <h3>OR</h3>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="Erosion"
+                                                                    type="radio" class="form-check-input">
+                                                                Observation</label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="Erosion"
+                                                                    type="radio" class="form-check-input"> RUSLE
+                                                                Model</label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="Erosion"
+                                                                    type="radio" class="form-check-input"> Not
+                                                                Both</label>
+                                                        </div>
+                                                    </fieldset>
                                                 </div>
                                             </div>
                                         </div>
@@ -356,6 +362,275 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="step-5" class="tab-pane step-content">
+                                        <div class="form row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group">
+                                                    <h3>G1: Levels of Contaminants</h3>
+                                                    <label for="">Groundwater concenntrations are higher the human
+                                                        health and ecological investigation or assessment
+                                                        levels?</label>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="position-relative form-check"><label
+                                                                        class="form-check-label"><input name="LoC"
+                                                                            type="radio" value="1"
+                                                                            class="form-check-input">
+                                                                        Yes</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="position-relative form-check"><label
+                                                                        class="form-check-label"><input name="LoC"
+                                                                            type="radio" value="0"
+                                                                            class="form-check-input">
+                                                                        No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group">
+                                                    <h3>G2: Synthetic Precipitation leaching procedure (SPLP) values
+                                                    </h3>
+                                                    <label for="">SPLP concentrations are higher the human health and
+                                                        ecological invetigation or assesment levels?</label>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="position-relative form-check"><label
+                                                                        class="form-check-label"><input name="SPLP"
+                                                                            type="radio" value="1"
+                                                                            class="form-check-input">
+                                                                        Yes</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="position-relative form-check"><label
+                                                                        class="form-check-label"><input name="SPLP"
+                                                                            type="radio" value="0"
+                                                                            class="form-check-input">
+                                                                        No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="col-md-10">
+                                                <div class="position-relative form-group">
+                                                    <h3>G3: Depth to the Groundwater
+                                                    </h3>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="1" class="form-check-input">
+                                                                Groundwater table in unconfined aquiler below ground
+                                                                surface &lt; 5m bgs. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="2" class="form-check-input">
+                                                                Groundwater table in unconfined aquiler below ground
+                                                                surface &gt; 5m bgs and &lt; 10m bgs. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="3" class="form-check-input">
+                                                                Groundwater table in unconfined aquiler below ground
+                                                                surface &gt; 10m bgs. </label>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="col-md-10">
+                                                <div class="position-relative form-group">
+                                                    <h3>G4: Off-site impact and liability issues
+                                                    </h3>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="1" class="form-check-input">
+                                                                Groundwater flow direction towards sensitive receptor
+                                                                and velocity &lt; 5m per year. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="2" class="form-check-input">
+                                                                Groundwater flow direction towards sensitive receptor
+                                                                and velocity &gt; 5m/yr and &lt; 20 m/yr. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="3" class="form-check-input">
+                                                                Groundwater flow direction towards sensitive receptor
+                                                                and velocity &gt; 20 m/yr and &lt; 30 m/yr. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="4" class="form-check-input">
+                                                                Groundwater flow direction towards sensitive receptor
+                                                                and velocity &gt; 30m per year. </label>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="col-md-10">
+                                                <div class="position-relative form-group">
+                                                    <h3>G5: Nearest drinking groundwater bore hole
+                                                    </h3>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="1" class="form-check-input">
+                                                                Nearest dringking groundwater bore hole / residence &le;
+                                                                5000 m. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="2" class="form-check-input">
+                                                                Nearest dringking groundwater bore hole / residence &le;
+                                                                2000 m. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="3" class="form-check-input">
+                                                                Nearest dringking groundwater bore hole / residence &le;
+                                                                1000 m. </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="4" class="form-check-input">
+                                                                Nearest dringking groundwater bore hole / residence &le;
+                                                                500 m. </label>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form row">
+                                            <div class="col-md-10">
+                                                <div class="position-relative form-group">
+                                                    <h3>G6: Applicability of Intitution control
+                                                    </h3>
+                                                    <fieldset class="position-relative form-group">
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="1" class="form-check-input">
+                                                                Stringent institutional control could be applied.
+                                                            </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="2" class="form-check-input">
+                                                                Institutional control could be applied and difficult to
+                                                                follow up.
+                                                            </label>
+                                                        </div>
+                                                        <div class="position-relative form-check"><label
+                                                                class="form-check-label"><input name="DttG" type="radio"
+                                                                    value="3" class="form-check-input">
+                                                                No Institutional control could be applied.
+                                                            </label>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-6" class="tab-pane step-content">
+                                        <div class="form row">
+                                            <div class="col-md-12">
+                                                <div class="position-relative form-group">
+                                                    <p>1.&ensp;File name:
+                                                        <span>Testing Name</span> <br><br>
+                                                        2.&ensp;Description: <span>Lorem ipsum, dolor sit amet
+                                                            consectetur adipisicing elit. Amet quidem modi, quas
+                                                            reiciendis nobis itaque possimus suscipit nostrum numquam
+                                                            sint, non necessitatibus ex natus et officiis magni
+                                                            distinctio ad nam.</span> <br><br>
+                                                        3.&ensp;Chemical profile: <br>
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr style="background-color:#3ac47d; color:#fff;">
+                                                                    <th>#</th>
+                                                                    <th>Chemical</th>
+                                                                    <th>con. in soil (mg/Kg)</th>
+                                                                    <th>Ground Water (mg/L)</th>
+                                                                    <th>con. in surface (mg/L)</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <th>Cadmium</th>
+                                                                    <th>10</th>
+                                                                    <th>0.2</th>
+                                                                    <th>0.1</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <th>Arsenic</th>
+                                                                    <th>1</th>
+                                                                    <th>0</th>
+                                                                    <th>0.1</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <br><br>
+                                                        4.&ensp;Weight on Human Risk (w): <span>10</span><br><br>
+                                                        5.&ensp;F1: Area of Soil (Shallow (0-0.2 m) contamination over):
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-7" class="tab-pane step-content">
+                                        <div class="form row">
+                                            <div class="col-md-12">
+                                                <div class="position-relative form-group">
+                                                    <h3>Scores</h3>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr style="background-color:#3ac47d; color:#fff;">
+                                                                <th>Filename</th>
+                                                                <th>Children</th>
+                                                                <th>Adult</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>[Filename]</th>
+                                                                <th>xx.x</th>
+                                                                <th>xx.x</th>
+                                                                <th>
+                                                                    <button
+                                                                        class="mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"><i
+                                                                            class="pe-7s-pen btn-icon-wrapper">
+                                                                        </i></button>
+                                                                    <button
+                                                                        class="mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                                                                            class="pe-7s-trash btn-icon-wrapper">
+                                                                        </i></button></th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div id="step-8" class="tab-pane step-content">
                                         <div class="no-results">
                                             <div class="swal2-icon swal2-success swal2-animate-success-icon">
@@ -371,11 +646,12 @@
                                             </div>
                                             <div class="results-subtitle mt-4">Finished!</div>
                                             <div class="results-title">You arrived at the last form
-                                                wizard step!</div>
+                                                step!</div>
                                             <div class="mt-3 mb-3"></div>
                                             <div class="text-center">
-                                                <button
-                                                    class="btn-shadow btn-wide btn btn-success btn-lg">Finish</button>
+                                                <router-link to="/" class="btn-shadow btn-wide btn btn-success btn-lg">
+                                                    Finish
+                                                </router-link>
                                             </div>
                                         </div>
                                     </div>

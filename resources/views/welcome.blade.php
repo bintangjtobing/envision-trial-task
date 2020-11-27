@@ -12,9 +12,9 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
     <link href="{!!asset('css/index.css')!!}" rel="stylesheet">
-    <link href="{!!asset('css/main.css')!!}" rel="stylesheet">
-    <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
-    <script src="{{ mix('js/app.js') }}" type="text/javascript" defer></script>
+    {{-- <link href="{!!asset('css/main.css')!!}" rel="stylesheet"> --}}
+    <link href="{{mix('css/app.css') }}" type="text/css" rel="stylesheet" />
+    <script src="{{mix('js/app.js') }}" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -161,6 +161,12 @@
                                     </router-link>
                                 </li>
                                 <li>
+                                    <router-link to="/chemical-data-lists" active-class="mm-active">
+                                        <i class="metismenu-icon pe-7s-folder"></i>
+                                        Chemical Data List
+                                    </router-link>
+                                </li>
+                                <li>
                                     <router-link to="/data-results" active-class="mm-active">
                                         <i class="metismenu-icon pe-7s-folder"></i>
                                         Data Results
@@ -215,7 +221,7 @@
             {{-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> --}}
         </div>
     </div>
-    <script type="text/javascript" src="{!!asset('assets/scripts/main.js')!!}"></script>
+    {{-- <script type="text/javascript" src="{!!asset('assets/scripts/main.js')!!}"></script> --}}
     <script type="text/javascript" src="{!!asset('assets/scripts/index.js')!!}"></script>
 </body>
 

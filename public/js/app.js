@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -1896,6 +1908,1053 @@ module.exports = {
   trim: trim
 };
 
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ChemicalData.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ChemicalData.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      chemical: {},
+      chemicals: [],
+      alert: {
+        visibility: false,
+        message: '',
+        type: ''
+      }
+    };
+  },
+  beforeMount: function beforeMount() {
+    this.getChemicals();
+  },
+  methods: {
+    getChemicals: function getChemicals() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios.get('api/chemicals');
+
+              case 3:
+                r = _context.sent;
+                _this.chemicals = r.data;
+                _context.next = 9;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 7]]);
+      }))();
+    },
+    AddChemical: function AddChemical() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/add-chemical-list', _this2.chemical);
+
+              case 3:
+                r = _context2.sent;
+
+                _this2.chemicals.push(r.data);
+
+                _this2.chemical = {};
+                _this2.alert = {
+                  visibility: true,
+                  message: 'Chemical has been success',
+                  type: 'success'
+                };
+                _context2.next = 12;
+                break;
+
+              case 9:
+                _context2.prev = 9;
+                _context2.t0 = _context2["catch"](0);
+                _this2.alert = {
+                  visibility: true,
+                  message: 'Chemical has been fail',
+                  type: 'error'
+                };
+
+              case 12:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 9]]);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFileS.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NewFileS.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      file: {},
+      fileErrors: {},
+      chemicals: [],
+      chemicaldatas: []
+    };
+  },
+  watch: {
+    'file.name': function () {
+      var _fileName = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(file, oldFile) {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/check-file", {
+                  params: {
+                    name: file
+                  }
+                });
+
+              case 3:
+                r = _context.sent;
+                this.fileErrors = {};
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+                this.fileErrors = _context.t0.response.data.errors;
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 7]]);
+      }));
+
+      function fileName(_x, _x2) {
+        return _fileName.apply(this, arguments);
+      }
+
+      return fileName;
+    }()
+  },
+  beforeMount: function beforeMount() {
+    this.getChemicals();
+    this.getChemicalDatas();
+  },
+  methods: {
+    getChemicals: function getChemicals() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/chemicals');
+
+              case 3:
+                r = _context2.sent;
+                _this.chemicals = r.data;
+                _context2.next = 9;
+                break;
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 7]]);
+      }))();
+    },
+    getChemicalDatas: function getChemicalDatas() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/chemicaldatas');
+
+              case 3:
+                r = _context3.sent;
+                _this2.chemicaldatas = r.data;
+                _context3.next = 9;
+                break;
+
+              case 7:
+                _context3.prev = 7;
+                _context3.t0 = _context3["catch"](0);
+
+              case 9:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 7]]);
+      }))();
+    },
+    addChemicalData: function addChemicalData() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/chemicaldatas', _this3.file);
+
+              case 3:
+                r = _context4.sent;
+                _this3.file = {};
+
+                _this3.chemicaldatas.push(r.data);
+
+                _context4.next = 10;
+                break;
+
+              case 8:
+                _context4.prev = 8;
+                _context4.t0 = _context4["catch"](0);
+
+              case 10:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 8]]);
+      }))();
+    }
+  },
+  mounted: function mounted() {
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () {
+      myFunction();
+    };
+
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = winScroll / height * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  }
+});
 
 /***/ }),
 
@@ -37201,6 +38260,765 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : undefined
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
   !*** ./node_modules/setimmediate/setImmediate.js ***!
@@ -37490,6 +39308,445 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "AddChemical",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "AddChemical",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-dialog-centered",
+            attrs: { role: "document" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.AddChemical($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-12" }, [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("label", { attrs: { for: "" } }, [
+                            _vm._v("Chemical Name")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.chemical.name,
+                                expression: "chemical.name"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", required: "" },
+                            domProps: { value: _vm.chemical.name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.chemical,
+                                  "name",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("label", { attrs: { for: "" } }, [
+                            _vm._v("Chemical Formula")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.chemical.formula,
+                                expression: "chemical.formula"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", required: "" },
+                            domProps: { value: _vm.chemical.formula },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.chemical,
+                                  "formula",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("label", { attrs: { for: "" } }, [
+                            _vm._v("Oral Slope Factor (r)")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.chemical.oralR,
+                                expression: "chemical.oralR"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "number",
+                              required: "",
+                              step: "0.00001"
+                            },
+                            domProps: { value: _vm.chemical.oralR },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.chemical,
+                                  "oralR",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("label", { attrs: { for: "" } }, [
+                            _vm._v("Oral Reference Dose (RfD)")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.chemical.oralS,
+                                expression: "chemical.oralS"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "number",
+                              required: "",
+                              step: "0.00001"
+                            },
+                            domProps: { value: _vm.chemical.oralS },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.chemical,
+                                  "oralS",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ]
+              )
+            ])
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c("div", { staticClass: "mb-3 card" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "table",
+              {
+                staticClass: "table table-hover table-striped table-bordered",
+                staticStyle: { width: "100%" },
+                attrs: { id: "example" }
+              },
+              [
+                _vm._m(4),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.chemicals, function(chemical, key) {
+                    return _c("tr", { key: key }, [
+                      _c("td", [_vm._v(_vm._s(key + 1))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(chemical.chemical_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(chemical.formula))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(chemical.oralS))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(chemical.oralR))]),
+                      _vm._v(" "),
+                      _vm._m(5, true)
+                    ])
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _vm._m(6)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title" }, [_vm._v("Add Chemical")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("Save")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "app-page-title" }, [
+      _c("div", { staticClass: "page-title-wrapper" }, [
+        _c("div", { staticClass: "page-title-heading" }, [
+          _c("div", { staticClass: "page-title-icon" }, [
+            _c("i", { staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit" })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v("Data previous results\n                    "),
+            _c("div", { staticClass: "page-title-subheading" }, [
+              _vm._v(
+                "\n                        See the latest and all data that you inserted in this platform.\n                    "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "card-header-tab card-header-tab-animation card-header" },
+      [
+        _c("div", { staticClass: "card-header-title" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 text-left" }, [
+              _vm._v(
+                "\n                                Previous Results\n                            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6 text-right" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    "data-toggle": "modal",
+                    "data-target": "#AddChemical"
+                  }
+                },
+                [
+                  _vm._v(
+                    "Add\n                                    Chemical List\n                                "
+                  )
+                ]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Chemical Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Chemical Formula")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Oral Slope Factor (r)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Oral Reference Dose (RfD)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+        },
+        [_c("i", { staticClass: "pe-7s-look btn-icon-wrapper" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"
+        },
+        [_c("i", { staticClass: "pe-7s-pen btn-icon-wrapper" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+        },
+        [_c("i", { staticClass: "pe-7s-trash btn-icon-wrapper" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tfoot", [
+      _c("tr", [
+        _c("th", [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Chemical Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Chemical Formula")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Oral Slope Factor (r)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Oral Reference Dose (RfD)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DataResult.vue?vue&type=template&id=61ccdd92&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DataResult.vue?vue&type=template&id=61ccdd92& ***!
@@ -37690,1027 +39947,11 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", [
               _vm._v("Dashboard\n                    "),
-              _c("div", { staticClass: "page-title-subheading" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6 col-xl-4" }, [
-          _c(
-            "div",
-            { staticClass: "card mb-3 widget-content bg-midnight-bloom" },
-            [
-              _c("div", { staticClass: "widget-content-wrapper text-white" }, [
-                _c("div", { staticClass: "widget-content-left" }, [
-                  _c("div", { staticClass: "widget-heading" }, [
-                    _vm._v("Total Orders")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "widget-subheading" }, [
-                    _vm._v("Last year expenses")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "widget-content-right" }, [
-                  _c("div", { staticClass: "widget-numbers text-white" }, [
-                    _c("span", [_vm._v("1896")])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 col-xl-4" }, [
-          _c(
-            "div",
-            { staticClass: "card mb-3 widget-content bg-arielle-smile" },
-            [
-              _c("div", { staticClass: "widget-content-wrapper text-white" }, [
-                _c("div", { staticClass: "widget-content-left" }, [
-                  _c("div", { staticClass: "widget-heading" }, [
-                    _vm._v("Clients")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "widget-subheading" }, [
-                    _vm._v("Total Clients Profit")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "widget-content-right" }, [
-                  _c("div", { staticClass: "widget-numbers text-white" }, [
-                    _c("span", [_vm._v("$ 568")])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 col-xl-4" }, [
-          _c("div", { staticClass: "card mb-3 widget-content bg-grow-early" }, [
-            _c("div", { staticClass: "widget-content-wrapper text-white" }, [
-              _c("div", { staticClass: "widget-content-left" }, [
-                _c("div", { staticClass: "widget-heading" }, [
-                  _vm._v("Followers")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "widget-subheading" }, [
-                  _vm._v("People Interested")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "widget-content-right" }, [
-                _c("div", { staticClass: "widget-numbers text-white" }, [
-                  _c("span", [_vm._v("46%")])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "d-xl-none d-lg-block col-md-6 col-xl-4" }, [
-          _c(
-            "div",
-            { staticClass: "card mb-3 widget-content bg-premium-dark" },
-            [
-              _c("div", { staticClass: "widget-content-wrapper text-white" }, [
-                _c("div", { staticClass: "widget-content-left" }, [
-                  _c("div", { staticClass: "widget-heading" }, [
-                    _vm._v("Products Sold")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "widget-subheading" }, [
-                    _vm._v("Revenue streams")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "widget-content-right" }, [
-                  _c("div", { staticClass: "widget-numbers text-warning" }, [
-                    _c("span", [_vm._v("$14M")])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12 col-lg-6" }, [
-          _c("div", { staticClass: "mb-3 card" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "card-header-tab card-header-tab-animation card-header"
-              },
-              [
-                _c("div", { staticClass: "card-header-title" }, [
-                  _c("i", {
-                    staticClass:
-                      "header-icon lnr-apartment icon-gradient bg-love-kiss"
-                  }),
-                  _vm._v(
-                    "\n                        Sales Report\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("ul", { staticClass: "nav" }, [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "active nav-link",
-                        attrs: { href: "javascript:void(0);" }
-                      },
-                      [_vm._v("Last")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link second-tab-toggle",
-                        attrs: { href: "javascript:void(0);" }
-                      },
-                      [_vm._v("Current")]
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane fade show active",
-                    attrs: { id: "tabs-eg-77" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "card mb-3 widget-chart widget-chart2 text-left w-100"
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "widget-chat-wrapper-outer" },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0"
-                              },
-                              [_c("canvas", { attrs: { id: "canvas" } })]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "h6",
-                      {
-                        staticClass:
-                          "text-muted text-uppercase font-size-md opacity-5 font-weight-normal"
-                      },
-                      [_vm._v("\n                                Top Authors")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "scroll-area-sm" }, [
-                      _c("div", { staticClass: "scrollbar-container" }, [
-                        _c(
-                          "ul",
-                          {
-                            staticClass:
-                              "rm-list-borders rm-list-borders-scroll list-group list-group-flush"
-                          },
-                          [
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "widget-content p-0" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-wrapper" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "widget-content-left mr-3"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "rounded-circle",
-                                          attrs: {
-                                            width: "42",
-                                            src: "assets/images/avatars/9.jpg",
-                                            alt: ""
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-left" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-heading" },
-                                          [
-                                            _vm._v(
-                                              "Ella-Rose Henry\n                                                        "
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-subheading" },
-                                          [
-                                            _vm._v(
-                                              "Web Developer\n                                                        "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-right" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "font-size-xlg text-muted"
-                                          },
-                                          [
-                                            _c(
-                                              "small",
-                                              { staticClass: "opacity-5 pr-1" },
-                                              [_vm._v("$")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("span", [_vm._v("129")]),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              {
-                                                staticClass: "text-danger pl-2"
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-angle-down"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "widget-content p-0" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-wrapper" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "widget-content-left mr-3"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "rounded-circle",
-                                          attrs: {
-                                            width: "42",
-                                            src: "assets/images/avatars/5.jpg",
-                                            alt: ""
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-left" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-heading" },
-                                          [_vm._v("Ruben Tillman")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-subheading" },
-                                          [_vm._v("UI Designer")]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-right" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "font-size-xlg text-muted"
-                                          },
-                                          [
-                                            _c(
-                                              "small",
-                                              { staticClass: "opacity-5 pr-1" },
-                                              [_vm._v("$")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("span", [_vm._v("54")]),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              {
-                                                staticClass: "text-success pl-2"
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "fa fa-angle-up"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "widget-content p-0" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-wrapper" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "widget-content-left mr-3"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "rounded-circle",
-                                          attrs: {
-                                            width: "42",
-                                            src: "assets/images/avatars/4.jpg",
-                                            alt: ""
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-left" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-heading" },
-                                          [
-                                            _vm._v(
-                                              "Vinnie Wagstaff\n                                                        "
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-subheading" },
-                                          [
-                                            _vm._v(
-                                              "Java Programmer\n                                                        "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-right" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "font-size-xlg text-muted"
-                                          },
-                                          [
-                                            _c(
-                                              "small",
-                                              { staticClass: "opacity-5 pr-1" },
-                                              [_vm._v("$")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("span", [_vm._v("429")]),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              {
-                                                staticClass: "text-warning pl-2"
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-dot-circle"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "widget-content p-0" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-wrapper" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "widget-content-left mr-3"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "rounded-circle",
-                                          attrs: {
-                                            width: "42",
-                                            src: "assets/images/avatars/3.jpg",
-                                            alt: ""
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-left" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-heading" },
-                                          [
-                                            _vm._v(
-                                              "Ella-Rose Henry\n                                                        "
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-subheading" },
-                                          [
-                                            _vm._v(
-                                              "Web Developer\n                                                        "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-right" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "font-size-xlg text-muted"
-                                          },
-                                          [
-                                            _c(
-                                              "small",
-                                              { staticClass: "opacity-5 pr-1" },
-                                              [_vm._v("$")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("span", [_vm._v("129")]),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              {
-                                                staticClass: "text-danger pl-2"
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-angle-down"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _c("div", { staticClass: "widget-content p-0" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-wrapper" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "widget-content-left mr-3"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "rounded-circle",
-                                          attrs: {
-                                            width: "42",
-                                            src: "assets/images/avatars/2.jpg",
-                                            alt: ""
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-left" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-heading" },
-                                          [_vm._v("Ruben Tillman")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "widget-subheading" },
-                                          [_vm._v("UI Designer")]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "widget-content-right" },
-                                      [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "font-size-xlg text-muted"
-                                          },
-                                          [
-                                            _c(
-                                              "small",
-                                              { staticClass: "opacity-5 pr-1" },
-                                              [_vm._v("$")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("span", [_vm._v("54")]),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              {
-                                                staticClass: "text-success pl-2"
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "fa fa-angle-up"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ])
-                          ]
-                        )
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-12 col-lg-6" }, [
-          _c("div", { staticClass: "mb-3 card" }, [
-            _c("div", { staticClass: "card-header-tab card-header" }, [
-              _c("div", { staticClass: "card-header-title" }, [
-                _c("i", {
-                  staticClass:
-                    "header-icon lnr-rocket icon-gradient bg-tempting-azure"
-                }),
+              _c("div", { staticClass: "page-title-subheading" }, [
                 _vm._v(
-                  "\n                        Bandwidth Reports\n                    "
+                  "\n                        Hi there! What did you gonna do?\n                    "
                 )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-actions-pane-right" }, [
-                _c("div", { staticClass: "nav" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "border-0 btn-pill btn-wide btn-transition active btn btn-outline-alternate",
-                      attrs: { href: "javascript:void(0);" }
-                    },
-                    [_vm._v("Tab\n                                1")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "ml-1 btn-pill btn-wide border-0 btn-transition  btn btn-outline-alternate second-tab-toggle-alt",
-                      attrs: { href: "javascript:void(0);" }
-                    },
-                    [_vm._v("Tab\n                                2")]
-                  )
-                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "tab-content" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "tab-pane fade active show",
-                  attrs: { id: "tab-eg-55" }
-                },
-                [
-                  _c("div", { staticClass: "widget-chart p-3" }, [
-                    _c("div", { staticStyle: { height: "350px" } }, [
-                      _c("canvas", { attrs: { id: "line-chart" } })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "widget-chart-content text-center mt-5" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "widget-description mt-0 text-warning"
-                          },
-                          [
-                            _c("i", { staticClass: "fa fa-arrow-left" }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "pl-1" }, [
-                              _vm._v("175.5%")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "span",
-                              { staticClass: "text-muted opacity-8 pl-1" },
-                              [
-                                _vm._v(
-                                  "increased server\n                                        resources"
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "pt-2 card-body" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "widget-content" }, [
-                          _c("div", { staticClass: "widget-content-outer" }, [
-                            _c(
-                              "div",
-                              { staticClass: "widget-content-wrapper" },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-left" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "widget-numbers fsize-3 text-muted"
-                                      },
-                                      [
-                                        _vm._v(
-                                          "63%\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-right" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "text-muted opacity-6" },
-                                      [
-                                        _vm._v(
-                                          "Generated Leads\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "widget-progress-wrapper mt-1" },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "progress-bar-sm progress-bar-animated-alt progress"
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass: "progress-bar bg-danger",
-                                      staticStyle: { width: "63%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "63",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "widget-content" }, [
-                          _c("div", { staticClass: "widget-content-outer" }, [
-                            _c(
-                              "div",
-                              { staticClass: "widget-content-wrapper" },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-left" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "widget-numbers fsize-3 text-muted"
-                                      },
-                                      [
-                                        _vm._v(
-                                          "32%\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-right" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "text-muted opacity-6" },
-                                      [
-                                        _vm._v(
-                                          "Submitted Tickers\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "widget-progress-wrapper mt-1" },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "progress-bar-sm progress-bar-animated-alt progress"
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass: "progress-bar bg-success",
-                                      staticStyle: { width: "32%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "32",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "widget-content" }, [
-                          _c("div", { staticClass: "widget-content-outer" }, [
-                            _c(
-                              "div",
-                              { staticClass: "widget-content-wrapper" },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-left" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "widget-numbers fsize-3 text-muted"
-                                      },
-                                      [
-                                        _vm._v(
-                                          "71%\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-right" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "text-muted opacity-6" },
-                                      [
-                                        _vm._v(
-                                          "Server Allocation\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "widget-progress-wrapper mt-1" },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "progress-bar-sm progress-bar-animated-alt progress"
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass: "progress-bar bg-primary",
-                                      staticStyle: { width: "71%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "71",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "widget-content" }, [
-                          _c("div", { staticClass: "widget-content-outer" }, [
-                            _c(
-                              "div",
-                              { staticClass: "widget-content-wrapper" },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-left" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "widget-numbers fsize-3 text-muted"
-                                      },
-                                      [
-                                        _vm._v(
-                                          "41%\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "widget-content-right" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "text-muted opacity-6" },
-                                      [
-                                        _vm._v(
-                                          "Generated Leads\n                                                    "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "widget-progress-wrapper mt-1" },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "progress-bar-sm progress-bar-animated-alt progress"
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass: "progress-bar bg-warning",
-                                      staticStyle: { width: "41%" },
-                                      attrs: {
-                                        role: "progressbar",
-                                        "aria-valuenow": "41",
-                                        "aria-valuemin": "0",
-                                        "aria-valuemax": "100"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
             ])
           ])
         ])
@@ -38724,10 +39965,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFile.vue?vue&type=template&id=12e322be&":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NewFile.vue?vue&type=template&id=12e322be& ***!
-  \**********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc& ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38739,1334 +39980,1556 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "tab-pane tabs-animation fade show active",
+        attrs: { id: "tab-content-0", role: "tabpanel" }
+      },
+      [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+            _c(
+              "form",
+              {
+                attrs: { method: "POST" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.addNewFile($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Create File Name")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "exampleEmail55" } }, [
+                              _vm._v("Filename")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.file.name,
+                                  expression: "file.name"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              class: _vm.fileErrors.name ? "border-danger" : "",
+                              attrs: {
+                                required: "",
+                                name: "filename",
+                                id: "exampleEmail55",
+                                placeholder: "Filename here",
+                                type: "text"
+                              },
+                              domProps: { value: _vm.file.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.file,
+                                    "name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.fileErrors.name
+                              ? _c("span", { staticClass: "text-danger" }, [
+                                  _vm._v(
+                                    _vm._s(_vm.fileErrors.name.join(",") || "")
+                                  )
+                                ])
+                              : _vm._e()
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c(
+                              "label",
+                              { attrs: { for: "examplePassword22" } },
+                              [_vm._v("Description")]
+                            ),
+                            _vm._v(" "),
+                            _c("textarea", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.file.desc,
+                                  expression: "file.desc"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "desc",
+                                cols: "30",
+                                rows: "10",
+                                placeholder: "Description here..."
+                              },
+                              domProps: { value: _vm.file.desc },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.file,
+                                    "desc",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Chemical Profile")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-12" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Chemical")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.file.chemicalid,
+                                    expression: "file.chemicalid"
+                                  }
+                                ],
+                                staticClass: "form-control custom-select",
+                                attrs: { required: "", id: "" },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.file,
+                                      "chemicalid",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option"),
+                                _vm._v(" "),
+                                _vm._l(_vm.chemicals, function(chemical, key) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: key,
+                                      domProps: { value: chemical.id }
+                                    },
+                                    [_vm._v(_vm._s(chemical.chemical_name))]
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.addChemicalData($event)
+                          }
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-4" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Con. in Soil")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.file.CiS,
+                                      expression: "file.CiS"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    required: "",
+                                    type: "number",
+                                    step: "1",
+                                    placeholder: "mg/Kg"
+                                  },
+                                  domProps: { value: _vm.file.CiS },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.file,
+                                        "CiS",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-4" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Con. in Groundwater")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.file.CiG,
+                                      expression: "file.CiG"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    required: "",
+                                    type: "number",
+                                    step: "0.01",
+                                    placeholder: "mg/L"
+                                  },
+                                  domProps: { value: _vm.file.CiG },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.file,
+                                        "CiG",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-4" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Con. in Surface Water")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.file.CiSW,
+                                      expression: "file.CiSW"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    required: "",
+                                    type: "number",
+                                    step: "0.01",
+                                    placeholder: "mg/L"
+                                  },
+                                  domProps: { value: _vm.file.CiSW },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.file,
+                                        "CiSW",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(2)
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("table", { staticClass: "table" }, [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c(
+                          "tbody",
+                          _vm._l(_vm.chemicaldatas, function(chemical, key) {
+                            return _c("tr", { key: key }, [
+                              _c("th", { attrs: { scope: "row" } }, [
+                                _vm._v(_vm._s(key + 1))
+                              ]),
+                              _vm._v(" "),
+                              _c("th", [
+                                _vm._v(
+                                  _vm._s(
+                                    chemical.chemical
+                                      ? chemical.chemical.chemical_name
+                                      : ""
+                                  )
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("th", [_vm._v(_vm._s(chemical.CiS))]),
+                              _vm._v(" "),
+                              _c("th", [_vm._v(_vm._s(chemical.CiG))]),
+                              _vm._v(" "),
+                              _c("th", [_vm._v(_vm._s(chemical.CiSW))])
+                            ])
+                          }),
+                          0
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8)
+              ]
+            )
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "app-page-title" }, [
-        _c("div", { staticClass: "page-title-wrapper" }, [
-          _c("div", { staticClass: "page-title-heading" }, [
-            _c("div", { staticClass: "page-title-icon" }, [
-              _c("i", {
-                staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit"
+    return _c("div", { staticClass: "app-page-title" }, [
+      _c("div", { staticClass: "page-title-wrapper" }, [
+        _c("div", { staticClass: "page-title-heading" }, [
+          _c("div", { staticClass: "page-title-icon" }, [
+            _c("i", { staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit" })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v("New File\n                    "),
+            _c("div", { staticClass: "page-title-subheading" }, [
+              _vm._v(
+                "\n                        Create your chemical new data.\n                    "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row sticky-top",
+        staticStyle: { top: "55px !important" }
+      },
+      [
+        _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+          _c("div", { staticClass: "main-card my-3 card" }, [
+            _c("div", { staticClass: "card-body sticky-top" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "progress-bar-animated-alt progress sticky-active-class"
+                },
+                [
+                  _c("div", {
+                    staticClass: "progress-bar bg-success",
+                    staticStyle: { width: "0%" },
+                    attrs: {
+                      role: "progressbar",
+                      "aria-valuenow": "0",
+                      "aria-valuemin": "0",
+                      "aria-valuemax": "100",
+                      id: "myBar"
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-row" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("Add to list")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c(
+        "tr",
+        { staticStyle: { "background-color": "#3ac47d", color: "#fff" } },
+        [
+          _c("th", [_vm._v("#")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Chemical")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("con. in soil (mg/Kg)")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Ground Water (mg/L)")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("con. in surface (mg/L)")])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-card mb-3 card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [_vm._v("Human Impact")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Weight on Human Risk (w)")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  required: "",
+                  type: "number",
+                  step: "0.5",
+                  name: "WoHR",
+                  placeholder: "1.0"
+                }
               })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v("New File\n                    "),
-              _c("div", { staticClass: "page-title-subheading" }, [
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
                 _vm._v(
-                  "\n                        Create your chemical new data.\n                    "
+                  "Area of Soil (Shallow (0-0.2 m) contamination\n                                            over)"
                 )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "AoS", type: "radio" }
+                    }),
+                    _vm._v(" Small area (< 50m"),
+                    _c("sup", [
+                      _vm._v(
+                        "\n                                                        2"
+                      )
+                    ]),
+                    _vm._v(") with dense groundcover")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "AoS", type: "radio" }
+                    }),
+                    _vm._v(" Small area (< 50m"),
+                    _c("sup", [
+                      _vm._v(
+                        "\n                                                        2"
+                      )
+                    ]),
+                    _vm._v(") with no groundcover")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "AoS", type: "radio" }
+                    }),
+                    _vm._v(" Large area (≥ 50m"),
+                    _c("sup", [
+                      _vm._v(
+                        "\n                                                        2"
+                      )
+                    ]),
+                    _vm._v(") with dense groundcover")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "AoS", type: "radio" }
+                    }),
+                    _vm._v(" Large area (≥ 50m"),
+                    _c("sup", [
+                      _vm._v(
+                        "\n                                                        2"
+                      )
+                    ]),
+                    _vm._v(") with no groundcover")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Groundwater Exposure Pathway")
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "GEP",
+                        value: "1",
+                        type: "radio"
+                      }
+                    }),
+                    _vm._v(" Yes")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "GEP",
+                        value: "0",
+                        type: "radio"
+                      }
+                    }),
+                    _vm._v(" No")
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Human Groundwater Consumption?")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Under 6 years old")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      required: "",
+                      type: "number",
+                      step: "0.5",
+                      placeholder: "2.0 L/day",
+                      name: "HGC",
+                      id: ""
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row mt-2" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Over 6 years old")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      required: "",
+                      type: "number",
+                      step: "0.5",
+                      placeholder: "3.0 L/day",
+                      name: "HGC",
+                      id: ""
+                    }
+                  })
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Surface Water Exposure Pathway")
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "GEP",
+                        value: "1",
+                        type: "radio"
+                      }
+                    }),
+                    _vm._v(" Yes")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "GEP",
+                        value: "0",
+                        type: "radio"
+                      }
+                    }),
+                    _vm._v(" No")
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Human Surface Water Consumption?")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Under 6 years old")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      required: "",
+                      type: "number",
+                      step: "0.5",
+                      placeholder: "2.0 L/day",
+                      name: "HGC",
+                      id: ""
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row mt-2" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Over 6 years old")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      required: "",
+                      type: "number",
+                      step: "0.5",
+                      placeholder: "3.0 L/day",
+                      name: "HGC",
+                      id: ""
+                    }
+                  })
+                ])
               ])
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "tab-pane tabs-animation fade show active",
-          attrs: { id: "tab-content-0", role: "tabpanel" }
-        },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-              _c("div", { staticClass: "main-card mb-3 card" }, [
-                _c("div", { staticClass: "card-body" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "sw-main sw-theme-default",
-                      attrs: { id: "smartwizard" }
-                    },
-                    [
-                      _c(
-                        "ul",
-                        {
-                          staticClass: "forms-wizard nav nav-tabs step-anchor"
-                        },
-                        [
-                          _c("li", { staticClass: "nav-item active" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-1" }
-                              },
-                              [
-                                _c("em", [_vm._v("1")]),
-                                _c("span", [_vm._v("Create file name")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-2" }
-                              },
-                              [
-                                _c("em", [_vm._v("2")]),
-                                _c("span", [_vm._v("Chemical Profile")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-3" }
-                              },
-                              [
-                                _c("em", [_vm._v("3")]),
-                                _c("span", [_vm._v("Human Impact")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-4" }
-                              },
-                              [
-                                _c("em", [_vm._v("4")]),
-                                _c("span", [_vm._v("Ecological Impact")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-5" }
-                              },
-                              [
-                                _c("em", [_vm._v("5")]),
-                                _c("span", [_vm._v("Groundwater Impact")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-6" }
-                              },
-                              [
-                                _c("em", [_vm._v("6")]),
-                                _c("span", [_vm._v("Summary Page")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-7" }
-                              },
-                              [
-                                _c("em", [_vm._v("7")]),
-                                _c("span", [_vm._v("Scores")])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", { staticClass: "nav-item" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#step-8" }
-                              },
-                              [
-                                _c("em", [_vm._v("8")]),
-                                _c("span", [_vm._v("Finish!")])
-                              ]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "form-wizard-content sw-container tab-content",
-                          staticStyle: {
-                            "min-height": "310.417px",
-                            "margin-top": "1rem"
-                          }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane step-content",
-                              staticStyle: { display: "block" },
-                              attrs: { id: "step-1" }
-                            },
-                            [
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c(
-                                        "label",
-                                        { attrs: { for: "exampleEmail55" } },
-                                        [_vm._v("Filename")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          name: "filename",
-                                          id: "exampleEmail55",
-                                          placeholder: "Filename here",
-                                          type: "text"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c(
-                                        "label",
-                                        { attrs: { for: "examplePassword22" } },
-                                        [_vm._v("Description")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("textarea", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          name: "desc",
-                                          cols: "30",
-                                          rows: "10",
-                                          placeholder: "Description here..."
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane step-content",
-                              attrs: { id: "step-2" }
-                            },
-                            [
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-12" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Chemical")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "select",
-                                        {
-                                          staticClass:
-                                            "form-control custom-select",
-                                          attrs: {
-                                            name: "chemicaldata",
-                                            id: ""
-                                          }
-                                        },
-                                        [
-                                          _c("option", [_vm._v("Lead (Pb),")]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Arsenic (As),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Mercury (Hg),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Zinc (Zn),")]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Copper (Cu),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Nickle (Ni),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Iron (Fe),")]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Manganese (Mn),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Chromium (Cr),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Vanadium (V),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Titanium (Ti),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Calcium (Ca),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Potassium (K),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Sulfur (S),")]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Barium (Ba),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Caesium (Cs),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Tellurium (Te),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Antimony (Sb),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Tin (Sn),")]),
-                                          _vm._v(" "),
-                                          _c("option", [
-                                            _vm._v("Cadmium (Cd),")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Silver (Ag)")])
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Con. in Soil")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "CiS",
-                                          placeholder: "mg/Kg"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Con. in Groundwater")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "CiG",
-                                          placeholder: "mg/L"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Con. in Surface Water")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "CiSW",
-                                          placeholder: "mg/L"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "btn btn-primary",
-                                    attrs: { href: "" }
-                                  },
-                                  [_vm._v("Add to list")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("hr"),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("table", { staticClass: "table" }, [
-                                  _c("thead", [
-                                    _c(
-                                      "tr",
-                                      {
-                                        staticStyle: {
-                                          "background-color": "#3ac47d",
-                                          color: "#fff"
-                                        }
-                                      },
-                                      [
-                                        _c("th", [_vm._v("#")]),
-                                        _vm._v(" "),
-                                        _c("th", [_vm._v("Chemical")]),
-                                        _vm._v(" "),
-                                        _c("th", [
-                                          _vm._v("con. in soil (mg/Kg)")
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("th", [
-                                          _vm._v("Ground Water (mg/L)")
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("th", [
-                                          _vm._v("con. in surface (mg/L)")
-                                        ])
-                                      ]
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("tbody", [
-                                    _c("tr", [
-                                      _c("th", { attrs: { scope: "row" } }, [
-                                        _vm._v("1")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("Cadmium")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("10")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("0.2")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("0.1")])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c("th", { attrs: { scope: "row" } }, [
-                                        _vm._v("2")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("Arsenic")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("1")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("0")]),
-                                      _vm._v(" "),
-                                      _c("th", [_vm._v("0.1")])
-                                    ])
-                                  ])
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane step-content",
-                              attrs: { id: "step-3" }
-                            },
-                            [
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-8" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Weight on Human Risk (w)")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "WoHR",
-                                          placeholder: "1.0"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-8" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v(
-                                          "Area of Soil (Shallow (0-0.2 m) contamination\n                                                    over)"
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "fieldset",
-                                        {
-                                          staticClass:
-                                            "position-relative form-group"
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "AoS",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Small area (< 50m"),
-                                                  _c("sup", [
-                                                    _vm._v(
-                                                      "\n                                                                2"
-                                                    )
-                                                  ]),
-                                                  _vm._v(
-                                                    ") with dense groundcover"
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "AoS",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Small area (< 50m"),
-                                                  _c("sup", [
-                                                    _vm._v(
-                                                      "\n                                                                2"
-                                                    )
-                                                  ]),
-                                                  _vm._v(
-                                                    ") with no groundcover"
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "AoS",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Large area (≥ 50m"),
-                                                  _c("sup", [
-                                                    _vm._v(
-                                                      "\n                                                                2"
-                                                    )
-                                                  ]),
-                                                  _vm._v(
-                                                    ") with dense groundcover"
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "AoS",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Large area (≥ 50m"),
-                                                  _c("sup", [
-                                                    _vm._v(
-                                                      "\n                                                                2"
-                                                    )
-                                                  ]),
-                                                  _vm._v(
-                                                    ") with no groundcover"
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("hr"),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Groundwater Exposure Pathway")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "fieldset",
-                                        {
-                                          staticClass:
-                                            "position-relative form-group"
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "GEP",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Yes")
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "GEP",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" No")
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Human Groundwater Consumption?")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "row" }, [
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("label", { attrs: { for: "" } }, [
-                                            _vm._v("Under 6 years old")
-                                          ])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("input", {
-                                            staticClass: "form-control",
-                                            attrs: {
-                                              type: "text",
-                                              placeholder: "2.0 L/day",
-                                              name: "HGC",
-                                              id: ""
-                                            }
-                                          })
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "row mt-2" }, [
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("label", { attrs: { for: "" } }, [
-                                            _vm._v("Over 6 years old")
-                                          ])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("input", {
-                                            staticClass: "form-control",
-                                            attrs: {
-                                              type: "text",
-                                              placeholder: "3.0 L/day",
-                                              name: "HGC",
-                                              id: ""
-                                            }
-                                          })
-                                        ])
-                                      ])
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("hr"),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Surface Water Exposure Pathway")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "fieldset",
-                                        {
-                                          staticClass:
-                                            "position-relative form-group"
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "GEP",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" Yes")
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "position-relative form-check"
-                                            },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  staticClass:
-                                                    "form-check-label"
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "form-check-input",
-                                                    attrs: {
-                                                      name: "GEP",
-                                                      type: "radio"
-                                                    }
-                                                  }),
-                                                  _vm._v(" No")
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-6" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v(
-                                          "Human Surface Water Consumption?"
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "row" }, [
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("label", { attrs: { for: "" } }, [
-                                            _vm._v("Under 6 years old")
-                                          ])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("input", {
-                                            staticClass: "form-control",
-                                            attrs: {
-                                              type: "text",
-                                              placeholder: "2.0 L/day",
-                                              name: "HGC",
-                                              id: ""
-                                            }
-                                          })
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "row mt-2" }, [
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("label", { attrs: { for: "" } }, [
-                                            _vm._v("Over 6 years old")
-                                          ])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-md-4" }, [
-                                          _c("input", {
-                                            staticClass: "form-control",
-                                            attrs: {
-                                              type: "text",
-                                              placeholder: "3.0 L/day",
-                                              name: "HGC",
-                                              id: ""
-                                            }
-                                          })
-                                        ])
-                                      ])
-                                    ]
-                                  )
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane step-content",
-                              attrs: { id: "step-4" }
-                            },
-                            [
-                              _c("div", { staticClass: "form row" }, [
-                                _c("div", { staticClass: "col-md-8" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v(
-                                          "Weight on Aquatic Risk (Downstream Impact)"
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "pl-3 pr-3 pb-5" },
-                                        [
-                                          _c("div", {
-                                            attrs: { id: "pips-steps" }
-                                          })
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticStyle: { color: "#fff" },
-                                          attrs: { for: "" }
-                                        },
-                                        [_vm._v("asdasd")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "WoAR",
-                                          id: ""
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-5" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v("Erosion")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "select",
-                                        {
-                                          staticClass:
-                                            "form-control custom-select",
-                                          attrs: { name: "Erosion", id: "" }
-                                        },
-                                        [
-                                          _c(
-                                            "option",
-                                            { attrs: { value: "Observation" } },
-                                            [_vm._v("Observation")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "option",
-                                            { attrs: { value: "RUSLE Model" } },
-                                            [_vm._v("RUSLE Model")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "option",
-                                            { attrs: { value: "Not Both" } },
-                                            [_vm._v("Not Both")]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-5" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticStyle: { color: "#fff" },
-                                          attrs: { for: "" }
-                                        },
-                                        [_vm._v("adsqwe")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("h3", [_vm._v("OR")])
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("hr"),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-3" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v(
-                                          "Relative Growth Rate(Aquatic environment)"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "RGRae",
-                                          id: ""
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c("div", { staticClass: "col-md-3" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("label", { attrs: { for: "" } }, [
-                                        _vm._v(
-                                          "Relative Growth Rate (Terrestrial environment)"
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "position-relative form-group"
-                                    },
-                                    [
-                                      _c("input", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          name: "RGRte",
-                                          id: ""
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "tab-pane step-content",
-                              attrs: { id: "step-8" }
-                            },
-                            [
-                              _c("div", { staticClass: "no-results" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "swal2-icon swal2-success swal2-animate-success-icon"
-                                  },
-                                  [
-                                    _c("div", {
-                                      staticClass:
-                                        "swal2-success-circular-line-left",
-                                      staticStyle: {
-                                        "background-color": "rgb(255, 255, 255)"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("span", {
-                                      staticClass: "swal2-success-line-tip"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("span", {
-                                      staticClass: "swal2-success-line-long"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "swal2-success-ring"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "swal2-success-fix",
-                                      staticStyle: {
-                                        "background-color": "rgb(255, 255, 255)"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass:
-                                        "swal2-success-circular-line-right",
-                                      staticStyle: {
-                                        "background-color": "rgb(255, 255, 255)"
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "results-subtitle mt-4" },
-                                  [_vm._v("Finished!")]
-                                ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "results-title" }, [
-                                  _vm._v(
-                                    "You arrived at the last form\n                                            wizard step!"
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "mt-3 mb-3" }),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "text-center" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn-shadow btn-wide btn btn-success btn-lg"
-                                    },
-                                    [_vm._v("Finish")]
-                                  )
-                                ])
-                              ])
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "divider" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "clearfix" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn-shadow float-left btn btn-link",
-                        attrs: { type: "button", id: "reset-btn" }
-                      },
-                      [_vm._v("Reset")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary",
-                        attrs: { type: "button", id: "next-btn" }
-                      },
-                      [_vm._v("Next")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn-shadow float-right btn-wide btn-pill mr-3 btn btn-outline-secondary",
-                        attrs: { type: "button", id: "prev-btn" }
-                      },
-                      [_vm._v("Previous")]
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-card mb-3 card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [_vm._v("Ecological Impact")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Weight on Aquatic Risk (Downstream Impact)")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "pl-3 pr-3 pb-5" }, [
+                _c("div", { attrs: { id: "pips-steps" } })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c(
+                "label",
+                { staticStyle: { color: "#fff" }, attrs: { for: "" } },
+                [_vm._v("asdasd")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { required: "", type: "text", name: "WoAR", id: "" }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-5" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Erosion")]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "Erosion", type: "radio" }
+                    }),
+                    _vm._v(
+                      "\n                                                    Observation"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "Erosion", type: "radio" }
+                    }),
+                    _vm._v(
+                      " RUSLE\n                                                    Model"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: { required: "", name: "Erosion", type: "radio" }
+                    }),
+                    _vm._v(
+                      " Not\n                                                    Both"
                     )
                   ])
                 ])
               ])
             ])
           ])
-        ]
-      )
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Relative Growth Rate(Aquatic environment)")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { required: "", type: "text", name: "RGRae", id: "" }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v("Relative Growth Rate (Terrestrial environment)")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { required: "", type: "text", name: "RGRte", id: "" }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-card mb-3 card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [_vm._v("Groundwater Impact")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [_vm._v("G1: Levels of Contaminants")]),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v(
+                  "Groundwater concenntrations are higher the human\n                                            health and ecological investigation or assessment\n                                            levels?"
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "position-relative form-check" }, [
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _c("input", {
+                          staticClass: "form-check-input",
+                          attrs: {
+                            required: "",
+                            name: "LoC",
+                            type: "radio",
+                            value: "1"
+                          }
+                        }),
+                        _vm._v(
+                          "\n                                                            Yes"
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "position-relative form-check" }, [
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _c("input", {
+                          staticClass: "form-check-input",
+                          attrs: {
+                            required: "",
+                            name: "LoC",
+                            type: "radio",
+                            value: "0"
+                          }
+                        }),
+                        _vm._v(
+                          "\n                                                            No"
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [
+                _vm._v(
+                  "G2: Synthetic Precipitation leaching procedure (SPLP) values\n                                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v(
+                  "SPLP concentrations are higher the human health and\n                                            ecological invetigation or assesment levels?"
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "position-relative form-check" }, [
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _c("input", {
+                          staticClass: "form-check-input",
+                          attrs: {
+                            required: "",
+                            name: "SPLP",
+                            type: "radio",
+                            value: "1"
+                          }
+                        }),
+                        _vm._v(
+                          "\n                                                            Yes"
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "position-relative form-check" }, [
+                      _c("label", { staticClass: "form-check-label" }, [
+                        _c("input", {
+                          staticClass: "form-check-input",
+                          attrs: {
+                            required: "",
+                            name: "SPLP",
+                            type: "radio",
+                            value: "0"
+                          }
+                        }),
+                        _vm._v(
+                          "\n                                                            No"
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-10" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [
+                _vm._v(
+                  "G3: Depth to the Groundwater\n                                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "1"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface < 5m bgs. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "2"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 5m bgs and < 10m bgs. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "3"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 10m bgs. "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-10" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [
+                _vm._v(
+                  "G4: Off-site impact and liability issues\n                                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "1"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity < 5m per year. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "2"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 5m/yr and < 20 m/yr. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "3"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 20 m/yr and < 30 m/yr. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "4"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 30m per year. "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-10" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [
+                _vm._v(
+                  "G5: Nearest drinking groundwater bore hole\n                                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "1"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    5000 m. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "2"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    2000 m. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "3"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    1000 m. "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "4"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    500 m. "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-10" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [
+                _vm._v(
+                  "G6: Applicability of Intitution control\n                                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("fieldset", { staticClass: "position-relative form-group" }, [
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "1"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Stringent institutional control could be applied.\n                                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "2"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    Institutional control could be applied and difficult to\n                                                    follow up.\n                                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-check" }, [
+                  _c("label", { staticClass: "form-check-label" }, [
+                    _c("input", {
+                      staticClass: "form-check-input",
+                      attrs: {
+                        required: "",
+                        name: "DttG",
+                        type: "radio",
+                        value: "3"
+                      }
+                    }),
+                    _vm._v(
+                      "\n                                                    No Institutional control could be applied.\n                                                "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-card mb-3 card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [_vm._v("Summary Page")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("p", [
+                _vm._v(
+                  "1. File name:\n                                            "
+                ),
+                _c("span", [_vm._v("Testing Name")]),
+                _vm._v(" "),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                                            2. Description: "
+                ),
+                _c("span", [
+                  _vm._v(
+                    "Lorem ipsum, dolor sit amet\n                                                consectetur adipisicing elit. Amet quidem modi, quas\n                                                reiciendis nobis itaque possimus suscipit nostrum numquam\n                                                sint, non necessitatibus ex natus et officiis magni\n                                                distinctio ad nam."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                                            3. Chemical profile: "
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c("table", { staticClass: "table" }, [
+                  _c("thead", [
+                    _c(
+                      "tr",
+                      {
+                        staticStyle: {
+                          "background-color": "#3ac47d",
+                          color: "#fff"
+                        }
+                      },
+                      [
+                        _c("th", [_vm._v("#")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Chemical")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("con. in soil (mg/Kg)")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Ground Water (mg/L)")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("con. in surface (mg/L)")])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("th", { attrs: { scope: "row" } }, [_vm._v("1")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Cadmium")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("10")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("0.2")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("0.1")])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("th", { attrs: { scope: "row" } }, [_vm._v("2")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Arsenic")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("1")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("0")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("0.1")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                                            4. Weight on Human Risk (w): "
+                ),
+                _c("span", [_vm._v("10")]),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "\n                                            5. F1: Area of Soil (Shallow (0-0.2 m) contamination over):\n                                        "
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "main-card mb-3 card" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [_vm._v("Scores")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "position-relative form-group" }, [
+              _c("h3", [_vm._v("Scores")]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table" }, [
+                _c("thead", [
+                  _c(
+                    "tr",
+                    {
+                      staticStyle: {
+                        "background-color": "#3ac47d",
+                        color: "#fff"
+                      }
+                    },
+                    [
+                      _c("th", [_vm._v("Filename")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Children")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Adult")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Action")])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("tbody", [
+                  _c("tr", [
+                    _c("th", [_vm._v("[Filename]")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("xx.x")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("xx.x")]),
+                    _vm._v(" "),
+                    _c("th", [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                        },
+                        [_c("i", { staticClass: "pe-7s-pen btn-icon-wrapper" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "pe-7s-trash btn-icon-wrapper"
+                          })
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "divider" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn-shadow float-left btn btn-link",
+              attrs: { type: "button", id: "reset-btn" }
+            },
+            [_vm._v("Reset")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary",
+              attrs: { type: "button", id: "next-btn" }
+            },
+            [_vm._v("Next")]
+          )
+        ])
+      ])
     ])
   }
 ]
@@ -56571,9 +58034,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Home_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Home.vue */ "./resources/js/components/Home.vue");
 /* harmony import */ var _components_user_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/user.vue */ "./resources/js/components/user.vue");
-/* harmony import */ var _components_NewFile_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NewFile.vue */ "./resources/js/components/NewFile.vue");
+/* harmony import */ var _components_NewFileS_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NewFileS.vue */ "./resources/js/components/NewFileS.vue");
 /* harmony import */ var _components_DataResult_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/DataResult.vue */ "./resources/js/components/DataResult.vue");
 /* harmony import */ var _components_UserGuide_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/UserGuide.vue */ "./resources/js/components/UserGuide.vue");
+/* harmony import */ var _components_ChemicalData_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/ChemicalData.vue */ "./resources/js/components/ChemicalData.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -56584,8 +58048,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
+ // Axios.defaults.withCredentials = true
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"], vue_axios__WEBPACK_IMPORTED_MODULE_1___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
+
 
 
 
@@ -56606,7 +58072,7 @@ var routes = [{
   }
 }, {
   path: '/new-file',
-  component: _components_NewFile_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _components_NewFileS_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
     title: 'New File | Dashboard mineCare'
   }
@@ -56621,6 +58087,12 @@ var routes = [{
   component: _components_UserGuide_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
     title: 'User Guides | Dashboard mineCare'
+  }
+}, {
+  path: '/chemical-data-lists',
+  component: _components_ChemicalData_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+  meta: {
+    title: 'Chemical Data Lists | Dashboard mineCare'
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -56685,6 +58157,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/ChemicalData.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/ChemicalData.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChemicalData.vue?vue&type=template&id=191fd0c7& */ "./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7&");
+/* harmony import */ var _ChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChemicalData.vue?vue&type=script&lang=js& */ "./resources/js/components/ChemicalData.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ChemicalData.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ChemicalData.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/ChemicalData.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ChemicalData.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ChemicalData.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ChemicalData.vue?vue&type=template&id=191fd0c7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ChemicalData.vue?vue&type=template&id=191fd0c7&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChemicalData_vue_vue_type_template_id_191fd0c7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -56794,27 +58335,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/NewFile.vue":
-/*!*********************************************!*\
-  !*** ./resources/js/components/NewFile.vue ***!
-  \*********************************************/
+/***/ "./resources/js/components/NewFileS.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/NewFileS.vue ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewFile.vue?vue&type=template&id=12e322be& */ "./resources/js/components/NewFile.vue?vue&type=template&id=12e322be&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewFileS.vue?vue&type=template&id=45afd2fc& */ "./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc&");
+/* harmony import */ var _NewFileS_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewFileS.vue?vue&type=script&lang=js& */ "./resources/js/components/NewFileS.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NewFileS_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -56824,24 +58367,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/NewFile.vue"
+component.options.__file = "resources/js/components/NewFileS.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/NewFile.vue?vue&type=template&id=12e322be&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/NewFile.vue?vue&type=template&id=12e322be& ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/NewFileS.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/NewFileS.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFileS_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./NewFileS.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFileS.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFileS_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc& ***!
+  \*****************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./NewFile.vue?vue&type=template&id=12e322be& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFile.vue?vue&type=template&id=12e322be&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./NewFileS.vue?vue&type=template&id=45afd2fc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NewFileS.vue?vue&type=template&id=45afd2fc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFile_vue_vue_type_template_id_12e322be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewFileS_vue_vue_type_template_id_45afd2fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
