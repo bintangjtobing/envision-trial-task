@@ -17,8 +17,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('add-chemical-list', 'DashboardController@addChemical');
+
 Route::get('chemicals', 'DashboardController@getChemicals');
+Route::post('add-chemical-list', 'DashboardController@addChemical');
+Route::get('users', 'DashboardController@users');
+
 Route::middleware('auth:api')->group(function () {
     Route::get('check-file', 'DashboardController@checkFile');
     Route::get('chemicaldatas', 'DashboardController@getChemicalDatas');

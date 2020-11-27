@@ -38,9 +38,9 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail55">Filename</label>
-                                            <input required name="filename" id="exampleEmail55"
-                                                placeholder="Filename here" v-model="file.name" type="text"
-                                                class="form-control" :class="fileErrors.name ? 'border-danger':''">
+                                            <input required id="exampleEmail55" placeholder="Filename here"
+                                                v-model="file.name" type="text" class="form-control"
+                                                :class="fileErrors.name ? 'border-danger':''">
                                             <span class="text-danger"
                                                 v-if="fileErrors.name">{{fileErrors.name.join(',') || ''}}</span>
                                         </div>
@@ -48,8 +48,8 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="examplePassword22">Description</label>
-                                            <textarea class="form-control" v-model="file.desc" name="desc" cols="30"
-                                                rows="10" placeholder="Description here..."></textarea>
+                                            <textarea class="form-control" v-model="file.desc" cols="30" rows="10"
+                                                placeholder="Description here..."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +131,8 @@
                                     <div class="col-md-8">
                                         <div class="position-relative form-group">
                                             <label for="">Weight on Human Risk (w)</label>
-                                            <input required type="number" step="0.5" name="WoHR" placeholder="1.0"
-                                                class="form-control">
+                                            <input required type="number" step="0.5" v-model="humanimpacts.wohr"
+                                                placeholder="1.0" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -143,23 +143,35 @@
                                                 over)</label>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="AoS" type="radio"
-                                                            class="form-check-input"> Small area (&lt; 50m<sup>
+                                                        class="form-check-label"><input v-model="humanimpacts.aos"
+                                                            type="radio" value="0" class="form-check-input"> Small
+                                                        area
+                                                        (&lt;
+                                                        50m<sup>
                                                             2</sup>) with dense groundcover</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="AoS" type="radio"
-                                                            class="form-check-input"> Small area (&lt; 50m<sup>
+                                                        class="form-check-label"><input v-model="humanimpacts.aos"
+                                                            type="radio" value="1" class="form-check-input"> Small
+                                                        area
+                                                        (&lt;
+                                                        50m<sup>
                                                             2</sup>) with no groundcover</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="AoS" type="radio"
-                                                            class="form-check-input"> Large area (&ge; 50m<sup>
+                                                        class="form-check-label"><input v-model="humanimpacts.aos"
+                                                            type="radio" value="2" class="form-check-input"> Large
+                                                        area
+                                                        (&ge;
+                                                        50m<sup>
                                                             2</sup>) with dense groundcover</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="AoS" type="radio"
-                                                            class="form-check-input"> Large area (&ge; 50m<sup>
+                                                        class="form-check-label"><input v-model="humanimpacts.aos"
+                                                            type="radio" value="3" class="form-check-input"> Large
+                                                        area
+                                                        (&ge;
+                                                        50m<sup>
                                                             2</sup>) with no groundcover</label>
                                                 </div>
                                             </fieldset>
@@ -173,26 +185,28 @@
                                             <label for="">Groundwater Exposure Pathway</label>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="GEP" value="1"
-                                                            type="radio" class="form-check-input"> Yes</label>
+                                                        class="form-check-label"><input v-model="humanimpacts.gep"
+                                                            :value="1" type="radio" class="form-check-input">
+                                                        Yes</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="GEP" value="0"
-                                                            type="radio" class="form-check-input"> No</label>
+                                                        class="form-check-label"><input v-model="humanimpacts.gep"
+                                                            :value="0" type="radio" class="form-check-input">
+                                                        No</label>
                                                 </div>
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="position-relative form-group">
+                                        <div class="position-relative form-group" id="GEPChoose">
                                             <label for="">Human Groundwater Consumption?</label>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <label for="">Under 6 years old</label>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <input required type="number" step="0.5" placeholder="2.0 L/day"
-                                                        name="HGC" id="" class="form-control">
+                                                    <input type="number" step="0.5" placeholder="2.0 L/day"
+                                                        v-model="humanimpacts.hgc" id="" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -200,8 +214,8 @@
                                                     <label for="">Over 6 years old</label>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <input required type="number" step="0.5" placeholder="3.0 L/day"
-                                                        name="HGC" id="" class="form-control">
+                                                    <input type="number" step="0.1" placeholder="3.0 L/day"
+                                                        v-model="humanimpacts.hgc" id="" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,12 +228,13 @@
                                             <label for="">Surface Water Exposure Pathway</label>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="GEP" value="1"
-                                                            type="radio" class="form-check-input"> Yes</label>
+                                                        class="form-check-label"><input v-model="humanimpacts.swep"
+                                                            :value="1" type="radio" class="form-check-input">
+                                                        Yes</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="GEP" value="0"
-                                                            type="radio" class="form-check-input"> No</label>
+                                                        class="form-check-label"><input v-model="humanimpacts.swep"
+                                                            :value="0" type="radio" class="form-check-input"> No</label>
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -233,7 +248,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input required type="number" step="0.5" placeholder="2.0 L/day"
-                                                        name="HGC" id="" class="form-control">
+                                                        v-model="humanimpacts.hswc" id="" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -242,7 +257,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input required type="number" step="0.5" placeholder="3.0 L/day"
-                                                        name="HGC" id="" class="form-control">
+                                                        v-model="humanimpacts.hswc" id="" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -264,8 +279,9 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="position-relative form-group">
-                                            <label for="" style="color: #fff">asdasd</label>
-                                            <input required type="text" name="WoAR" id="" class="form-control">
+                                            <label for="" style="color: #fff">WoAR</label>
+                                            <input required type="text" v-model="ecologicalimpacts.woar" id=""
+                                                class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -275,17 +291,20 @@
                                             <label for="">Erosion</label>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="Erosion"
+                                                        class="form-check-label"><input
+                                                            v-model="ecologicalimpacts.erosion" value="observation"
                                                             type="radio" class="form-check-input">
                                                         Observation</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="Erosion"
+                                                        class="form-check-label"><input
+                                                            v-model="ecologicalimpacts.erosion" value="ruslemodel"
                                                             type="radio" class="form-check-input"> RUSLE
                                                         Model</label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="Erosion"
+                                                        class="form-check-label"><input
+                                                            v-model="ecologicalimpacts.erosion" value="not both"
                                                             type="radio" class="form-check-input"> Not
                                                         Both</label>
                                                 </div>
@@ -302,7 +321,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="position-relative form-group">
-                                            <input required type="text" name="RGRae" id="" class="form-control">
+                                            <input required type="text" v-model="ecologicalimpacts.rgrae" id=""
+                                                class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +334,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="position-relative form-group">
-                                            <input required type="text" name="RGRte" id="" class="form-control">
+                                            <input required type="text" v-model="ecologicalimpacts.rgrte" id=""
+                                                class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -334,15 +355,17 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <div class="position-relative form-check"><label
-                                                                class="form-check-label"><input required name="LoC"
-                                                                    type="radio" value="1" class="form-check-input">
+                                                                class="form-check-label"><input required
+                                                                    v-model="groundwaterimpacts.loc" type="radio"
+                                                                    :value="1" class="form-check-input">
                                                                 Yes</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="position-relative form-check"><label
-                                                                class="form-check-label"><input required name="LoC"
-                                                                    type="radio" value="0" class="form-check-input">
+                                                                class="form-check-label"><input required
+                                                                    v-model="groundwaterimpacts.loc" type="radio"
+                                                                    :value="0" class="form-check-input">
                                                                 No</label>
                                                         </div>
                                                     </div>
@@ -362,15 +385,17 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <div class="position-relative form-check"><label
-                                                                class="form-check-label"><input required name="SPLP"
-                                                                    type="radio" value="1" class="form-check-input">
+                                                                class="form-check-label"><input required
+                                                                    v-model="groundwaterimpacts.splp" type="radio"
+                                                                    :value="1" class="form-check-input">
                                                                 Yes</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="position-relative form-check"><label
-                                                                class="form-check-label"><input required name="SPLP"
-                                                                    type="radio" value="0" class="form-check-input">
+                                                                class="form-check-label"><input required
+                                                                    v-model="groundwaterimpacts.splp" type="radio"
+                                                                    :value="0" class="form-check-input">
                                                                 No</label>
                                                         </div>
                                                     </div>
@@ -386,20 +411,23 @@
                                             </h3>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="1" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.dttg" type="radio" value="1"
+                                                            class="form-check-input">
                                                         Groundwater table in unconfined aquiler below ground
                                                         surface &lt; 5m bgs. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="2" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.dttg" type="radio" value="2"
+                                                            class="form-check-input">
                                                         Groundwater table in unconfined aquiler below ground
                                                         surface &gt; 5m bgs and &lt; 10m bgs. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="3" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.dttg" type="radio" value="3"
+                                                            class="form-check-input">
                                                         Groundwater table in unconfined aquiler below ground
                                                         surface &gt; 10m bgs. </label>
                                                 </div>
@@ -414,26 +442,30 @@
                                             </h3>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="1" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.oial" type="radio" value="1"
+                                                            class="form-check-input">
                                                         Groundwater flow direction towards sensitive receptor
                                                         and velocity &lt; 5m per year. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="2" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.oial" type="radio" value="2"
+                                                            class="form-check-input">
                                                         Groundwater flow direction towards sensitive receptor
                                                         and velocity &gt; 5m/yr and &lt; 20 m/yr. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="3" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.oial" type="radio" value="3"
+                                                            class="form-check-input">
                                                         Groundwater flow direction towards sensitive receptor
                                                         and velocity &gt; 20 m/yr and &lt; 30 m/yr. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="4" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.oial" type="radio" value="4"
+                                                            class="form-check-input">
                                                         Groundwater flow direction towards sensitive receptor
                                                         and velocity &gt; 30m per year. </label>
                                                 </div>
@@ -448,26 +480,30 @@
                                             </h3>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="1" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.ndgb" type="radio" value="1"
+                                                            class="form-check-input">
                                                         Nearest dringking groundwater bore hole / residence &le;
                                                         5000 m. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="2" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.ndgb" type="radio" value="2"
+                                                            class="form-check-input">
                                                         Nearest dringking groundwater bore hole / residence &le;
                                                         2000 m. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="3" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.ndgb" type="radio" value="3"
+                                                            class="form-check-input">
                                                         Nearest dringking groundwater bore hole / residence &le;
                                                         1000 m. </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="4" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.ndgb" type="radio" value="4"
+                                                            class="form-check-input">
                                                         Nearest dringking groundwater bore hole / residence &le;
                                                         500 m. </label>
                                                 </div>
@@ -482,21 +518,24 @@
                                             </h3>
                                             <fieldset class="position-relative form-group">
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="1" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.aoic" type="radio" value="1"
+                                                            class="form-check-input">
                                                         Stringent institutional control could be applied.
                                                     </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="2" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.aoic" type="radio" value="2"
+                                                            class="form-check-input">
                                                         Institutional control could be applied and difficult to
                                                         follow up.
                                                     </label>
                                                 </div>
                                                 <div class="position-relative form-check"><label
-                                                        class="form-check-label"><input required name="DttG"
-                                                            type="radio" value="3" class="form-check-input">
+                                                        class="form-check-label"><input required
+                                                            v-model="groundwaterimpacts.aoic" type="radio" value="3"
+                                                            class="form-check-input">
                                                         No Institutional control could be applied.
                                                     </label>
                                                 </div>
@@ -504,9 +543,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="divider"></div>
+
+                                <div class="clearfix">
+                                    <button type="button" id="reset-btn"
+                                        class="btn-shadow float-left btn btn-link">Reset</button>
+                                    <button type="button" id="next-btn"
+                                        class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary">Next</button>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="main-card mb-3 card">
+                        <!-- <div class="main-card mb-3 card">
                             <div class="card-body">
                                 <h5 class="card-title">Summary Page</h5>
                                 <div class="form row">
@@ -592,15 +640,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="divider"></div>
-                                <div class="clearfix">
-                                    <button type="button" id="reset-btn"
-                                        class="btn-shadow float-left btn btn-link">Reset</button>
-                                    <button type="button" id="next-btn"
-                                        class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary">Next</button>
-                                </div>
+
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>
@@ -616,6 +658,9 @@
                 fileErrors: {},
                 chemicals: [],
                 chemicaldatas: [],
+                humanimpacts: {},
+                ecologicalimpacts: {},
+                groundwaterimpacts: {},
             }
         },
         watch: {

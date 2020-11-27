@@ -162,7 +162,7 @@
                                 </li>
                                 <li>
                                     <router-link to="/chemical-data-lists" active-class="mm-active">
-                                        <i class="metismenu-icon pe-7s-folder"></i>
+                                        <i class="metismenu-icon pe-7s-drop"></i>
                                         Chemical Data List
                                     </router-link>
                                 </li>
@@ -221,7 +221,7 @@
             {{-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> --}}
         </div>
     </div>
-    {{-- <script type="text/javascript" src="{!!asset('assets/scripts/main.js')!!}"></script> --}}
+    <script type="text/javascript" src="{!!asset('assets/scripts/main.js')!!}"></script>
     <script type="text/javascript" src="{!!asset('assets/scripts/index.js')!!}"></script>
 </body>
 

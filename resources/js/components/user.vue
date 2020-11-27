@@ -30,36 +30,25 @@
                                     <th>No.</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Status</th>
                                     <th>Role</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>Administrator</td>
+                                <tr v-for="(member, key) in members" :key="key">
+                                    <td>{{key+1}}</td>
+                                    <td>{{member.name}}</td>
+                                    <td>{{member.email}}</td>
                                     <td>
                                         <button class="mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-primary"><i
                                                 class="pe-7s-look btn-icon-wrapper"> </i></button>
                                         <button class="mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"><i
                                                 class="pe-7s-pen btn-icon-wrapper"> </i></button>
                                         <button class="mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
-                                                class="pe-7s-trash btn-icon-wrapper"> </i></button></td>
+                                                class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                    </td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Filename</th>
-                                    <th>Children</th>
-                                    <th>Adult</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -67,3 +56,24 @@
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                members: []
+            };
+        },
+        mounted() {
+            this.loadUser();
+        },
+        methods: {
+            loadUser() {
+                axios.get("api/users")
+                    .then(response => {
+                        this.members = response.data;
+                    })
+            }
+        }
+    }
+
+</script>

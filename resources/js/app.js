@@ -20,6 +20,7 @@ import File from './components/NewFileS.vue';
 import Data from './components/DataResult.vue';
 import Guide from './components/UserGuide.vue';
 import ChemicalList from './components/ChemicalData.vue';
+import newChemicalList from './components/newChemicalData.vue';
 
 const routes = [{
         name: 'home',
@@ -63,7 +64,14 @@ const routes = [{
         meta: {
             title: 'Chemical Data Lists | Dashboard mineCare'
         }
-    }
+    },
+    {
+        path: '/new/chemical-data-lists',
+        component: newChemicalList,
+        meta: {
+            title: 'New /Chemical Data Lists | Dashboard mineCare'
+        }
+    },
 
 
 ]

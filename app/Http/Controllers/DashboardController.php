@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\chemicaldata;
 use App\chemicallist;
 use App\filename;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    public function users()
+    {
+        return User::all();
+    }
     public function index()
     {
         return view('welcome');
@@ -21,20 +26,22 @@ class DashboardController extends Controller
             'name' => 'sometimes|unique:filenames,filename',
         ]);
     }
-    public function addChemical()
+    public function addChemical(Request $request)
     {
-        $chemical = chemicallist::create([
-            'chemical_name' => request()->name,
-            'formula' => request()->formula,
-            'oralS' => request()->oralS,
-            'oralR' => request()->oralR,
-        ]);
-        return response()->json($chemical);
+        // $chemical = new chemicallist;
+        // $chemical->chemical_name = $request->name;
+        // $chemical->formula = $request->formula;
+        // $chemical->oralR = $request->oralR;
+        // $chemical->oralS = $request->oralS;
+        // $chemical->save();
+        dd($request->all());
     }
     public function getChemicals()
     {
         $chemicals = chemicallist::all();
-        return response()->json($chemicals);
+        return chemicallist::orderBy('chemical_name', 'ASC')->get();
+        // $chemicals = chemicallist::all();
+        // return response()->json($chemicals);
     }
     public function getChemicalDatas()
     {

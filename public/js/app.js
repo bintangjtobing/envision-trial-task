@@ -1920,16 +1920,6 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 //
 //
 //
@@ -1999,160 +1989,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      chemical: {},
-      chemicals: [],
-      alert: {
-        visibility: false,
-        message: '',
-        type: ''
-      }
+      chemicals: []
     };
   },
-  beforeMount: function beforeMount() {
+  mounted: function mounted() {
     this.getChemicals();
   },
   methods: {
+    // async getChemicals() {
+    //     try {
+    //         let r = await axios.get('api/chemicals')
+    //         this.chemicals = r.data
+    //     } catch (e) {
+    //     }
+    // },
     getChemicals: function getChemicals() {
       var _this = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var r;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return axios.get('api/chemicals');
-
-              case 3:
-                r = _context.sent;
-                _this.chemicals = r.data;
-                _context.next = 9;
-                break;
-
-              case 7:
-                _context.prev = 7;
-                _context.t0 = _context["catch"](0);
-
-              case 9:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[0, 7]]);
-      }))();
-    },
-    AddChemical: function AddChemical() {
-      var _this2 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var r;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/add-chemical-list', _this2.chemical);
-
-              case 3:
-                r = _context2.sent;
-
-                _this2.chemicals.push(r.data);
-
-                _this2.chemical = {};
-                _this2.alert = {
-                  visibility: true,
-                  message: 'Chemical has been success',
-                  type: 'success'
-                };
-                _context2.next = 12;
-                break;
-
-              case 9:
-                _context2.prev = 9;
-                _context2.t0 = _context2["catch"](0);
-                _this2.alert = {
-                  visibility: true,
-                  message: 'Chemical has been fail',
-                  type: 'error'
-                };
-
-              case 12:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, null, [[0, 9]]);
-      }))();
+      axios.get("api/chemicals").then(function (response) {
+        _this.chemicals = response.data;
+        console.log(_this);
+      });
     }
   }
 });
@@ -2787,6 +2647,48 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2794,7 +2696,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       file: {},
       fileErrors: {},
       chemicals: [],
-      chemicaldatas: []
+      chemicaldatas: [],
+      humanimpacts: {},
+      ecologicalimpacts: {},
+      groundwaterimpacts: {}
     };
   },
   watch: {
@@ -2952,6 +2857,215 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var scrolled = winScroll / height * 100;
       document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newChemicalData.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/newChemicalData.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      chemical: {}
+    };
+  },
+  methods: {
+    AddChemical: function AddChemical() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var r;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios.post('api/add-chemical-list', _this.chemical);
+
+              case 3:
+                r = _context.sent;
+
+                _this.$router.push('/chemical-data-lists');
+
+                _context.next = 9;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 7]]);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/user.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      members: []
+    };
+  },
+  mounted: function mounted() {
+    this.loadUser();
+  },
+  methods: {
+    loadUser: function loadUser() {
+      var _this = this;
+
+      axios.get("api/users").then(function (response) {
+        _this.members = response.data;
+      });
     }
   }
 });
@@ -39324,205 +39438,49 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "AddChemical",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "AddChemical",
-          "aria-hidden": "true"
-        }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "modal-dialog modal-dialog-centered",
-            attrs: { role: "document" }
-          },
-          [
-            _c("div", { staticClass: "modal-content" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "form",
-                {
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.AddChemical($event)
-                    }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "modal-body" }, [
-                    _c("div", { staticClass: "form-row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Chemical Name")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.chemical.name,
-                                expression: "chemical.name"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text", required: "" },
-                            domProps: { value: _vm.chemical.name },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.chemical,
-                                  "name",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-row" }, [
-                      _c("div", { staticClass: "col-md-4" }, [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Chemical Formula")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.chemical.formula,
-                                expression: "chemical.formula"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text", required: "" },
-                            domProps: { value: _vm.chemical.formula },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.chemical,
-                                  "formula",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-4" }, [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Oral Slope Factor (r)")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.chemical.oralR,
-                                expression: "chemical.oralR"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "number",
-                              required: "",
-                              step: "0.00001"
-                            },
-                            domProps: { value: _vm.chemical.oralR },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.chemical,
-                                  "oralR",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-4" }, [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Oral Reference Dose (RfD)")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.chemical.oralS,
-                                expression: "chemical.oralS"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "number",
-                              required: "",
-                              step: "0.00001"
-                            },
-                            domProps: { value: _vm.chemical.oralS },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.chemical,
-                                  "oralS",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(1)
-                ]
-              )
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _vm._m(2),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 col-lg-12" }, [
         _c("div", { staticClass: "mb-3 card" }, [
-          _vm._m(3),
+          _c(
+            "div",
+            {
+              staticClass:
+                "card-header-tab card-header-tab-animation card-header"
+            },
+            [
+              _c("div", { staticClass: "card-header-title" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6 text-left" }, [
+                    _vm._v(
+                      "\n                                Chemical Data Profile\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-6 text-right" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: { to: "/new/chemical-data-lists" }
+                        },
+                        [
+                          _vm._v(
+                            "Add\n                                    Chemical List\n                                "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c(
@@ -39533,7 +39491,7 @@ var render = function() {
                 attrs: { id: "example" }
               },
               [
-                _vm._m(4),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -39545,17 +39503,15 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(chemical.formula))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(chemical.oralS))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(chemical.oralR))]),
                       _vm._v(" "),
-                      _vm._m(5, true)
+                      _c("td", [_vm._v(_vm._s(chemical.oralS))]),
+                      _vm._v(" "),
+                      _vm._m(2, true)
                     ])
                   }),
                   0
-                ),
-                _vm._v(" "),
-                _vm._m(6)
+                )
               ]
             )
           ])
@@ -39569,104 +39525,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h5", { staticClass: "modal-title" }, [_vm._v("Add Chemical")]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Close")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Save")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "app-page-title" }, [
       _c("div", { staticClass: "page-title-wrapper" }, [
         _c("div", { staticClass: "page-title-heading" }, [
           _c("div", { staticClass: "page-title-icon" }, [
-            _c("i", { staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit" })
+            _c("i", { staticClass: "pe-7s-drop icon-gradient bg-mean-fruit" })
           ]),
           _vm._v(" "),
           _c("div", [
-            _vm._v("Data previous results\n                    "),
+            _vm._v("Chemical Data Lists\n                    "),
             _c("div", { staticClass: "page-title-subheading" }, [
               _vm._v(
-                "\n                        See the latest and all data that you inserted in this platform.\n                    "
+                "\n                        See chemical list data.\n                    "
               )
             ])
           ])
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "card-header-tab card-header-tab-animation card-header" },
-      [
-        _c("div", { staticClass: "card-header-title" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6 text-left" }, [
-              _vm._v(
-                "\n                                Previous Results\n                            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6 text-right" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: {
-                    "data-toggle": "modal",
-                    "data-target": "#AddChemical"
-                  }
-                },
-                [
-                  _vm._v(
-                    "Add\n                                    Chemical List\n                                "
-                  )
-                ]
-              )
-            ])
-          ])
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -39718,26 +39594,6 @@ var staticRenderFns = [
         },
         [_c("i", { staticClass: "pe-7s-trash btn-icon-wrapper" })]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tfoot", [
-      _c("tr", [
-        _c("th", [_vm._v("No.")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Chemical Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Chemical Formula")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Oral Slope Factor (r)")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Oral Reference Dose (RfD)")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Action")])
-      ])
     ])
   }
 ]
@@ -40035,7 +39891,6 @@ var render = function() {
                               class: _vm.fileErrors.name ? "border-danger" : "",
                               attrs: {
                                 required: "",
-                                name: "filename",
                                 id: "exampleEmail55",
                                 placeholder: "Filename here",
                                 type: "text"
@@ -40088,7 +39943,6 @@ var render = function() {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                name: "desc",
                                 cols: "30",
                                 rows: "10",
                                 placeholder: "Description here..."
@@ -40369,15 +40223,2076 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(4),
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Human Impact")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Weight on Human Risk (w)")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.humanimpacts.wohr,
+                                  expression: "humanimpacts.wohr"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                required: "",
+                                type: "number",
+                                step: "0.5",
+                                placeholder: "1.0"
+                              },
+                              domProps: { value: _vm.humanimpacts.wohr },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.humanimpacts,
+                                    "wohr",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v(
+                                "Area of Soil (Shallow (0-0.2 m) contamination\n                                            over)"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.aos,
+                                              expression: "humanimpacts.aos"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio", value: "0" },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.aos,
+                                              "0"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "aos",
+                                                "0"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " Small\n                                                    area\n                                                    (<\n                                                    50m"
+                                        ),
+                                        _c("sup", [
+                                          _vm._v(
+                                            "\n                                                        2"
+                                          )
+                                        ]),
+                                        _vm._v(") with dense groundcover")
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.aos,
+                                              expression: "humanimpacts.aos"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio", value: "1" },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.aos,
+                                              "1"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "aos",
+                                                "1"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " Small\n                                                    area\n                                                    (<\n                                                    50m"
+                                        ),
+                                        _c("sup", [
+                                          _vm._v(
+                                            "\n                                                        2"
+                                          )
+                                        ]),
+                                        _vm._v(") with no groundcover")
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.aos,
+                                              expression: "humanimpacts.aos"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio", value: "2" },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.aos,
+                                              "2"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "aos",
+                                                "2"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " Large\n                                                    area\n                                                    (≥\n                                                    50m"
+                                        ),
+                                        _c("sup", [
+                                          _vm._v(
+                                            "\n                                                        2"
+                                          )
+                                        ]),
+                                        _vm._v(") with dense groundcover")
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.aos,
+                                              expression: "humanimpacts.aos"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio", value: "3" },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.aos,
+                                              "3"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "aos",
+                                                "3"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " Large\n                                                    area\n                                                    (≥\n                                                    50m"
+                                        ),
+                                        _c("sup", [
+                                          _vm._v(
+                                            "\n                                                        2"
+                                          )
+                                        ]),
+                                        _vm._v(") with no groundcover")
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Groundwater Exposure Pathway")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.gep,
+                                              expression: "humanimpacts.gep"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio" },
+                                          domProps: {
+                                            value: 1,
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.gep,
+                                              1
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "gep",
+                                                1
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Yes"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.gep,
+                                              expression: "humanimpacts.gep"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio" },
+                                          domProps: {
+                                            value: 0,
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.gep,
+                                              0
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "gep",
+                                                0
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    No"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "position-relative form-group",
+                            attrs: { id: "GEPChoose" }
+                          },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Human Groundwater Consumption?")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _vm._m(4),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.humanimpacts.hgc,
+                                      expression: "humanimpacts.hgc"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "number",
+                                    step: "0.5",
+                                    placeholder: "2.0 L/day",
+                                    id: ""
+                                  },
+                                  domProps: { value: _vm.humanimpacts.hgc },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.humanimpacts,
+                                        "hgc",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row mt-2" }, [
+                              _vm._m(5),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.humanimpacts.hgc,
+                                      expression: "humanimpacts.hgc"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "number",
+                                    step: "0.1",
+                                    placeholder: "3.0 L/day",
+                                    id: ""
+                                  },
+                                  domProps: { value: _vm.humanimpacts.hgc },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.humanimpacts,
+                                        "hgc",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Surface Water Exposure Pathway")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.swep,
+                                              expression: "humanimpacts.swep"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio" },
+                                          domProps: {
+                                            value: 1,
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.swep,
+                                              1
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "swep",
+                                                1
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Yes"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.humanimpacts.swep,
+                                              expression: "humanimpacts.swep"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: { type: "radio" },
+                                          domProps: {
+                                            value: 0,
+                                            checked: _vm._q(
+                                              _vm.humanimpacts.swep,
+                                              0
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.humanimpacts,
+                                                "swep",
+                                                0
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" No")
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Human Surface Water Consumption?")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _vm._m(6),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.humanimpacts.hswc,
+                                      expression: "humanimpacts.hswc"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    required: "",
+                                    type: "number",
+                                    step: "0.5",
+                                    placeholder: "2.0 L/day",
+                                    id: ""
+                                  },
+                                  domProps: { value: _vm.humanimpacts.hswc },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.humanimpacts,
+                                        "hswc",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row mt-2" }, [
+                              _vm._m(7),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.humanimpacts.hswc,
+                                      expression: "humanimpacts.hswc"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    required: "",
+                                    type: "number",
+                                    step: "0.5",
+                                    placeholder: "3.0 L/day",
+                                    id: ""
+                                  },
+                                  domProps: { value: _vm.humanimpacts.hswc },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.humanimpacts,
+                                        "hswc",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(5),
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Ecological Impact")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticStyle: { color: "#fff" },
+                                attrs: { for: "" }
+                              },
+                              [_vm._v("WoAR")]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.ecologicalimpacts.woar,
+                                  expression: "ecologicalimpacts.woar"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { required: "", type: "text", id: "" },
+                              domProps: { value: _vm.ecologicalimpacts.woar },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.ecologicalimpacts,
+                                    "woar",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-5" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v("Erosion")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.ecologicalimpacts.erosion,
+                                              expression:
+                                                "ecologicalimpacts.erosion"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            value: "observation",
+                                            type: "radio"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.ecologicalimpacts.erosion,
+                                              "observation"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.ecologicalimpacts,
+                                                "erosion",
+                                                "observation"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Observation"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.ecologicalimpacts.erosion,
+                                              expression:
+                                                "ecologicalimpacts.erosion"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            value: "ruslemodel",
+                                            type: "radio"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.ecologicalimpacts.erosion,
+                                              "ruslemodel"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.ecologicalimpacts,
+                                                "erosion",
+                                                "ruslemodel"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " RUSLE\n                                                    Model"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.ecologicalimpacts.erosion,
+                                              expression:
+                                                "ecologicalimpacts.erosion"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            value: "not both",
+                                            type: "radio"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.ecologicalimpacts.erosion,
+                                              "not both"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.ecologicalimpacts,
+                                                "erosion",
+                                                "not both"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          " Not\n                                                    Both"
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("hr"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.ecologicalimpacts.rgrae,
+                                  expression: "ecologicalimpacts.rgrae"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { required: "", type: "text", id: "" },
+                              domProps: { value: _vm.ecologicalimpacts.rgrae },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.ecologicalimpacts,
+                                    "rgrae",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.ecologicalimpacts.rgrte,
+                                  expression: "ecologicalimpacts.rgrte"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { required: "", type: "text", id: "" },
+                              domProps: { value: _vm.ecologicalimpacts.rgrte },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.ecologicalimpacts,
+                                    "rgrte",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(6),
-                _vm._v(" "),
-                _vm._m(7),
-                _vm._v(" "),
-                _vm._m(8)
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Groundwater Impact")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [_vm._v("G1: Levels of Contaminants")]),
+                            _vm._v(" "),
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v(
+                                "Groundwater concenntrations are higher the human\n                                            health and ecological investigation or assessment\n                                            levels?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("div", { staticClass: "row" }, [
+                                  _c("div", { staticClass: "col-md-3" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "position-relative form-check"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          { staticClass: "form-check-label" },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    _vm.groundwaterimpacts.loc,
+                                                  expression:
+                                                    "groundwaterimpacts.loc"
+                                                }
+                                              ],
+                                              staticClass: "form-check-input",
+                                              attrs: {
+                                                required: "",
+                                                type: "radio"
+                                              },
+                                              domProps: {
+                                                value: 1,
+                                                checked: _vm._q(
+                                                  _vm.groundwaterimpacts.loc,
+                                                  1
+                                                )
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  return _vm.$set(
+                                                    _vm.groundwaterimpacts,
+                                                    "loc",
+                                                    1
+                                                  )
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(
+                                              "\n                                                            Yes"
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "col-md-3" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "position-relative form-check"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          { staticClass: "form-check-label" },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    _vm.groundwaterimpacts.loc,
+                                                  expression:
+                                                    "groundwaterimpacts.loc"
+                                                }
+                                              ],
+                                              staticClass: "form-check-input",
+                                              attrs: {
+                                                required: "",
+                                                type: "radio"
+                                              },
+                                              domProps: {
+                                                value: 0,
+                                                checked: _vm._q(
+                                                  _vm.groundwaterimpacts.loc,
+                                                  0
+                                                )
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  return _vm.$set(
+                                                    _vm.groundwaterimpacts,
+                                                    "loc",
+                                                    0
+                                                  )
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(
+                                              "\n                                                            No"
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "G2: Synthetic Precipitation leaching procedure (SPLP) values\n                                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("label", { attrs: { for: "" } }, [
+                              _vm._v(
+                                "SPLP concentrations are higher the human health and\n                                            ecological invetigation or assesment levels?"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("div", { staticClass: "row" }, [
+                                  _c("div", { staticClass: "col-md-3" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "position-relative form-check"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          { staticClass: "form-check-label" },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    _vm.groundwaterimpacts.splp,
+                                                  expression:
+                                                    "groundwaterimpacts.splp"
+                                                }
+                                              ],
+                                              staticClass: "form-check-input",
+                                              attrs: {
+                                                required: "",
+                                                type: "radio"
+                                              },
+                                              domProps: {
+                                                value: 1,
+                                                checked: _vm._q(
+                                                  _vm.groundwaterimpacts.splp,
+                                                  1
+                                                )
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  return _vm.$set(
+                                                    _vm.groundwaterimpacts,
+                                                    "splp",
+                                                    1
+                                                  )
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(
+                                              "\n                                                            Yes"
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "col-md-3" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "position-relative form-check"
+                                      },
+                                      [
+                                        _c(
+                                          "label",
+                                          { staticClass: "form-check-label" },
+                                          [
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    _vm.groundwaterimpacts.splp,
+                                                  expression:
+                                                    "groundwaterimpacts.splp"
+                                                }
+                                              ],
+                                              staticClass: "form-check-input",
+                                              attrs: {
+                                                required: "",
+                                                type: "radio"
+                                              },
+                                              domProps: {
+                                                value: 0,
+                                                checked: _vm._q(
+                                                  _vm.groundwaterimpacts.splp,
+                                                  0
+                                                )
+                                              },
+                                              on: {
+                                                change: function($event) {
+                                                  return _vm.$set(
+                                                    _vm.groundwaterimpacts,
+                                                    "splp",
+                                                    0
+                                                  )
+                                                }
+                                              }
+                                            }),
+                                            _vm._v(
+                                              "\n                                                            No"
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "G3: Depth to the Groundwater\n                                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.dttg,
+                                              expression:
+                                                "groundwaterimpacts.dttg"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "1"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.dttg,
+                                              "1"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "dttg",
+                                                "1"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface < 5m bgs. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.dttg,
+                                              expression:
+                                                "groundwaterimpacts.dttg"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "2"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.dttg,
+                                              "2"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "dttg",
+                                                "2"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 5m bgs and < 10m bgs. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.dttg,
+                                              expression:
+                                                "groundwaterimpacts.dttg"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "3"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.dttg,
+                                              "3"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "dttg",
+                                                "3"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 10m bgs. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "G4: Off-site impact and liability issues\n                                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.oial,
+                                              expression:
+                                                "groundwaterimpacts.oial"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "1"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.oial,
+                                              "1"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "oial",
+                                                "1"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity < 5m per year. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.oial,
+                                              expression:
+                                                "groundwaterimpacts.oial"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "2"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.oial,
+                                              "2"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "oial",
+                                                "2"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 5m/yr and < 20 m/yr. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.oial,
+                                              expression:
+                                                "groundwaterimpacts.oial"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "3"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.oial,
+                                              "3"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "oial",
+                                                "3"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 20 m/yr and < 30 m/yr. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.oial,
+                                              expression:
+                                                "groundwaterimpacts.oial"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "4"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.oial,
+                                              "4"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "oial",
+                                                "4"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 30m per year. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "G5: Nearest drinking groundwater bore hole\n                                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.ndgb,
+                                              expression:
+                                                "groundwaterimpacts.ndgb"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "1"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.ndgb,
+                                              "1"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "ndgb",
+                                                "1"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    5000 m. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.ndgb,
+                                              expression:
+                                                "groundwaterimpacts.ndgb"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "2"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.ndgb,
+                                              "2"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "ndgb",
+                                                "2"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    2000 m. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.ndgb,
+                                              expression:
+                                                "groundwaterimpacts.ndgb"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "3"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.ndgb,
+                                              "3"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "ndgb",
+                                                "3"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    1000 m. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.ndgb,
+                                              expression:
+                                                "groundwaterimpacts.ndgb"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "4"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.ndgb,
+                                              "4"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "ndgb",
+                                                "4"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    500 m. "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form row" }, [
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "G6: Applicability of Intitution control\n                                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "fieldset",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.aoic,
+                                              expression:
+                                                "groundwaterimpacts.aoic"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "1"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.aoic,
+                                              "1"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "aoic",
+                                                "1"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Stringent institutional control could be applied.\n                                                "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.aoic,
+                                              expression:
+                                                "groundwaterimpacts.aoic"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "2"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.aoic,
+                                              "2"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "aoic",
+                                                "2"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    Institutional control could be applied and difficult to\n                                                    follow up.\n                                                "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-check"
+                                  },
+                                  [
+                                    _c(
+                                      "label",
+                                      { staticClass: "form-check-label" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.groundwaterimpacts.aoic,
+                                              expression:
+                                                "groundwaterimpacts.aoic"
+                                            }
+                                          ],
+                                          staticClass: "form-check-input",
+                                          attrs: {
+                                            required: "",
+                                            type: "radio",
+                                            value: "3"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.groundwaterimpacts.aoic,
+                                              "3"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.groundwaterimpacts,
+                                                "aoic",
+                                                "3"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(
+                                          "\n                                                    No Institutional control could be applied.\n                                                "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider" }),
+                    _vm._v(" "),
+                    _vm._m(11)
+                  ])
+                ])
               ]
             )
           ])
@@ -40488,299 +42403,46 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-card mb-3 card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [_vm._v("Human Impact")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Weight on Human Risk (w)")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: {
-                  required: "",
-                  type: "number",
-                  step: "0.5",
-                  name: "WoHR",
-                  placeholder: "1.0"
-                }
-              })
-            ])
-          ])
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Under 6 years old")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Over 6 years old")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Under 6 years old")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Over 6 years old")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "position-relative form-group" }, [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v("Weight on Aquatic Risk (Downstream Impact)")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "Area of Soil (Shallow (0-0.2 m) contamination\n                                            over)"
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "AoS", type: "radio" }
-                    }),
-                    _vm._v(" Small area (< 50m"),
-                    _c("sup", [
-                      _vm._v(
-                        "\n                                                        2"
-                      )
-                    ]),
-                    _vm._v(") with dense groundcover")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "AoS", type: "radio" }
-                    }),
-                    _vm._v(" Small area (< 50m"),
-                    _c("sup", [
-                      _vm._v(
-                        "\n                                                        2"
-                      )
-                    ]),
-                    _vm._v(") with no groundcover")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "AoS", type: "radio" }
-                    }),
-                    _vm._v(" Large area (≥ 50m"),
-                    _c("sup", [
-                      _vm._v(
-                        "\n                                                        2"
-                      )
-                    ]),
-                    _vm._v(") with dense groundcover")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "AoS", type: "radio" }
-                    }),
-                    _vm._v(" Large area (≥ 50m"),
-                    _c("sup", [
-                      _vm._v(
-                        "\n                                                        2"
-                      )
-                    ]),
-                    _vm._v(") with no groundcover")
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Groundwater Exposure Pathway")
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "GEP",
-                        value: "1",
-                        type: "radio"
-                      }
-                    }),
-                    _vm._v(" Yes")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "GEP",
-                        value: "0",
-                        type: "radio"
-                      }
-                    }),
-                    _vm._v(" No")
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Human Groundwater Consumption?")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v("Under 6 years old")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "number",
-                      step: "0.5",
-                      placeholder: "2.0 L/day",
-                      name: "HGC",
-                      id: ""
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-2" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v("Over 6 years old")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "number",
-                      step: "0.5",
-                      placeholder: "3.0 L/day",
-                      name: "HGC",
-                      id: ""
-                    }
-                  })
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Surface Water Exposure Pathway")
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "GEP",
-                        value: "1",
-                        type: "radio"
-                      }
-                    }),
-                    _vm._v(" Yes")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "GEP",
-                        value: "0",
-                        type: "radio"
-                      }
-                    }),
-                    _vm._v(" No")
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Human Surface Water Consumption?")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v("Under 6 years old")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "number",
-                      step: "0.5",
-                      placeholder: "2.0 L/day",
-                      name: "HGC",
-                      id: ""
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-2" }, [
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v("Over 6 years old")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      required: "",
-                      type: "number",
-                      step: "0.5",
-                      placeholder: "3.0 L/day",
-                      name: "HGC",
-                      id: ""
-                    }
-                  })
-                ])
-              ])
-            ])
-          ])
+        _c("div", { staticClass: "pl-3 pr-3 pb-5" }, [
+          _c("div", { attrs: { id: "pips-steps" } })
         ])
       ])
     ])
@@ -40789,123 +42451,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-card mb-3 card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [_vm._v("Ecological Impact")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Weight on Aquatic Risk (Downstream Impact)")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "pl-3 pr-3 pb-5" }, [
-                _c("div", { attrs: { id: "pips-steps" } })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c(
-                "label",
-                { staticStyle: { color: "#fff" }, attrs: { for: "" } },
-                [_vm._v("asdasd")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { required: "", type: "text", name: "WoAR", id: "" }
-              })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-5" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [_vm._v("Erosion")]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "Erosion", type: "radio" }
-                    }),
-                    _vm._v(
-                      "\n                                                    Observation"
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "Erosion", type: "radio" }
-                    }),
-                    _vm._v(
-                      " RUSLE\n                                                    Model"
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { required: "", name: "Erosion", type: "radio" }
-                    }),
-                    _vm._v(
-                      " Not\n                                                    Both"
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Relative Growth Rate(Aquatic environment)")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { required: "", type: "text", name: "RGRae", id: "" }
-              })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v("Relative Growth Rate (Terrestrial environment)")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { required: "", type: "text", name: "RGRte", id: "" }
-              })
-            ])
-          ])
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "position-relative form-group" }, [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v("Relative Growth Rate(Aquatic environment)")
         ])
       ])
     ])
@@ -40914,418 +42463,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-card mb-3 card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [_vm._v("Groundwater Impact")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [_vm._v("G1: Levels of Contaminants")]),
-              _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "Groundwater concenntrations are higher the human\n                                            health and ecological investigation or assessment\n                                            levels?"
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-3" }, [
-                    _c("div", { staticClass: "position-relative form-check" }, [
-                      _c("label", { staticClass: "form-check-label" }, [
-                        _c("input", {
-                          staticClass: "form-check-input",
-                          attrs: {
-                            required: "",
-                            name: "LoC",
-                            type: "radio",
-                            value: "1"
-                          }
-                        }),
-                        _vm._v(
-                          "\n                                                            Yes"
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-3" }, [
-                    _c("div", { staticClass: "position-relative form-check" }, [
-                      _c("label", { staticClass: "form-check-label" }, [
-                        _c("input", {
-                          staticClass: "form-check-input",
-                          attrs: {
-                            required: "",
-                            name: "LoC",
-                            type: "radio",
-                            value: "0"
-                          }
-                        }),
-                        _vm._v(
-                          "\n                                                            No"
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [
-                _vm._v(
-                  "G2: Synthetic Precipitation leaching procedure (SPLP) values\n                                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(
-                  "SPLP concentrations are higher the human health and\n                                            ecological invetigation or assesment levels?"
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-3" }, [
-                    _c("div", { staticClass: "position-relative form-check" }, [
-                      _c("label", { staticClass: "form-check-label" }, [
-                        _c("input", {
-                          staticClass: "form-check-input",
-                          attrs: {
-                            required: "",
-                            name: "SPLP",
-                            type: "radio",
-                            value: "1"
-                          }
-                        }),
-                        _vm._v(
-                          "\n                                                            Yes"
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-3" }, [
-                    _c("div", { staticClass: "position-relative form-check" }, [
-                      _c("label", { staticClass: "form-check-label" }, [
-                        _c("input", {
-                          staticClass: "form-check-input",
-                          attrs: {
-                            required: "",
-                            name: "SPLP",
-                            type: "radio",
-                            value: "0"
-                          }
-                        }),
-                        _vm._v(
-                          "\n                                                            No"
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-10" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [
-                _vm._v(
-                  "G3: Depth to the Groundwater\n                                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "1"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface < 5m bgs. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "2"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 5m bgs and < 10m bgs. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "3"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater table in unconfined aquiler below ground\n                                                    surface > 10m bgs. "
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-10" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [
-                _vm._v(
-                  "G4: Off-site impact and liability issues\n                                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "1"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity < 5m per year. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "2"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 5m/yr and < 20 m/yr. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "3"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 20 m/yr and < 30 m/yr. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "4"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Groundwater flow direction towards sensitive receptor\n                                                    and velocity > 30m per year. "
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-10" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [
-                _vm._v(
-                  "G5: Nearest drinking groundwater bore hole\n                                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "1"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    5000 m. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "2"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    2000 m. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "3"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    1000 m. "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "4"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Nearest dringking groundwater bore hole / residence ≤\n                                                    500 m. "
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-10" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [
-                _vm._v(
-                  "G6: Applicability of Intitution control\n                                        "
-                )
-              ]),
-              _vm._v(" "),
-              _c("fieldset", { staticClass: "position-relative form-group" }, [
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "1"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Stringent institutional control could be applied.\n                                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "2"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    Institutional control could be applied and difficult to\n                                                    follow up.\n                                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "position-relative form-check" }, [
-                  _c("label", { staticClass: "form-check-label" }, [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: {
-                        required: "",
-                        name: "DttG",
-                        type: "radio",
-                        value: "3"
-                      }
-                    }),
-                    _vm._v(
-                      "\n                                                    No Institutional control could be applied.\n                                                "
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "position-relative form-group" }, [
+        _c("label", { attrs: { for: "" } }, [
+          _vm._v("Relative Growth Rate (Terrestrial environment)")
         ])
       ])
     ])
@@ -41334,202 +42475,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-card mb-3 card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [_vm._v("Summary Page")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("p", [
-                _vm._v(
-                  "1. File name:\n                                            "
-                ),
-                _c("span", [_vm._v("Testing Name")]),
-                _vm._v(" "),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\n                                            2. Description: "
-                ),
-                _c("span", [
-                  _vm._v(
-                    "Lorem ipsum, dolor sit amet\n                                                consectetur adipisicing elit. Amet quidem modi, quas\n                                                reiciendis nobis itaque possimus suscipit nostrum numquam\n                                                sint, non necessitatibus ex natus et officiis magni\n                                                distinctio ad nam."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\n                                            3. Chemical profile: "
-                ),
-                _c("br"),
-                _vm._v(" "),
-                _c("table", { staticClass: "table" }, [
-                  _c("thead", [
-                    _c(
-                      "tr",
-                      {
-                        staticStyle: {
-                          "background-color": "#3ac47d",
-                          color: "#fff"
-                        }
-                      },
-                      [
-                        _c("th", [_vm._v("#")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Chemical")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("con. in soil (mg/Kg)")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("Ground Water (mg/L)")]),
-                        _vm._v(" "),
-                        _c("th", [_vm._v("con. in surface (mg/L)")])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [_vm._v("1")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Cadmium")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("10")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("0.2")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("0.1")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [_vm._v("2")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Arsenic")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("1")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("0")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("0.1")])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\n                                            4. Weight on Human Risk (w): "
-                ),
-                _c("span", [_vm._v("10")]),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\n                                            5. F1: Area of Soil (Shallow (0-0.2 m) contamination over):\n                                        "
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main-card mb-3 card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [_vm._v("Scores")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "position-relative form-group" }, [
-              _c("h3", [_vm._v("Scores")]),
-              _vm._v(" "),
-              _c("table", { staticClass: "table" }, [
-                _c("thead", [
-                  _c(
-                    "tr",
-                    {
-                      staticStyle: {
-                        "background-color": "#3ac47d",
-                        color: "#fff"
-                      }
-                    },
-                    [
-                      _c("th", [_vm._v("Filename")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Children")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Adult")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Action")])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("tbody", [
-                  _c("tr", [
-                    _c("th", [_vm._v("[Filename]")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("xx.x")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("xx.x")]),
-                    _vm._v(" "),
-                    _c("th", [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                        },
-                        [_c("i", { staticClass: "pe-7s-pen btn-icon-wrapper" })]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "pe-7s-trash btn-icon-wrapper"
-                          })
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "divider" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "clearfix" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn-shadow float-left btn btn-link",
-              attrs: { type: "button", id: "reset-btn" }
-            },
-            [_vm._v("Reset")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary",
-              attrs: { type: "button", id: "next-btn" }
-            },
-            [_vm._v("Next")]
-          )
-        ])
-      ])
+    return _c("div", { staticClass: "clearfix" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn-shadow float-left btn btn-link",
+          attrs: { type: "button", id: "reset-btn" }
+        },
+        [_vm._v("Reset")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary",
+          attrs: { type: "button", id: "next-btn" }
+        },
+        [_vm._v("Next")]
+      )
     ])
   }
 ]
@@ -42607,6 +43571,203 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 my-3" }, [
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.AddChemical($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "form-row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Chemical Name")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.chemical.name,
+                        expression: "chemical.name"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", required: "" },
+                    domProps: { value: _vm.chemical.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.chemical, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Chemical Formula")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.chemical.formula,
+                        expression: "chemical.formula"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", required: "" },
+                    domProps: { value: _vm.chemical.formula },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.chemical, "formula", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Oral Slope Factor (r)")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.chemical.oralR,
+                        expression: "chemical.oralR"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "number", required: "", step: "0.00001" },
+                    domProps: { value: _vm.chemical.oralR },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.chemical, "oralR", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Oral Reference Dose (RfD)")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.chemical.oralS,
+                        expression: "chemical.oralS"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "number", required: "", step: "0.0001" },
+                    domProps: { value: _vm.chemical.oralS },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.chemical, "oralS", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              [_vm._v("Save")]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "app-page-title" }, [
+      _c("div", { staticClass: "page-title-wrapper" }, [
+        _c("div", { staticClass: "page-title-heading" }, [
+          _c("div", { staticClass: "page-title-icon" }, [
+            _c("i", { staticClass: "pe-7s-drop icon-gradient bg-mean-fruit" })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v("Add Chemical Data Lists\n                    "),
+            _c("div", { staticClass: "page-title-subheading" }, [
+              _vm._v(
+                "\n                        Add new chemical list data.\n                    "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user.vue?vue&type=template&id=e039bdd4&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/user.vue?vue&type=template&id=e039bdd4& ***!
@@ -42622,152 +43783,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c("div", { staticClass: "mb-3 card" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "table",
+              {
+                staticClass: "table table-hover table-striped table-bordered",
+                staticStyle: { width: "100%" },
+                attrs: { id: "example" }
+              },
+              [
+                _vm._m(2),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.members, function(member, key) {
+                    return _c("tr", { key: key }, [
+                      _c("td", [_vm._v(_vm._s(key + 1))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(member.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(member.email))]),
+                      _vm._v(" "),
+                      _vm._m(3, true)
+                    ])
+                  }),
+                  0
+                )
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "app-page-title" }, [
-        _c("div", { staticClass: "page-title-wrapper" }, [
-          _c("div", { staticClass: "page-title-heading" }, [
-            _c("div", { staticClass: "page-title-icon" }, [
-              _c("i", {
-                staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit"
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v("User Managements\n                    "),
-              _c("div", { staticClass: "page-title-subheading" }, [
-                _vm._v(
-                  "\n                        Control and manage your users. Be careful on credential status and users.\n                    "
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-          _c("div", { staticClass: "mb-3 card" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "card-header-tab card-header-tab-animation card-header"
-              },
-              [
-                _c("div", { staticClass: "card-header-title" }, [
-                  _vm._v(
-                    "\n                        User Management\n                    "
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c(
-                "table",
-                {
-                  staticClass: "table table-hover table-striped table-bordered",
-                  staticStyle: { width: "100%" },
-                  attrs: { id: "example" }
-                },
-                [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", [_vm._v("No.")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Name")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Email")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Status")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Role")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Action")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("1")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("System Architect")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Edinburgh")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("61")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Administrator")]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-primary"
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "pe-7s-look btn-icon-wrapper"
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "pe-7s-pen btn-icon-wrapper"
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "pe-7s-trash btn-icon-wrapper"
-                            })
-                          ]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tfoot", [
-                    _c("tr", [
-                      _c("th", [_vm._v("No.")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Filename")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Children")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Adult")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Action")])
-                    ])
-                  ])
-                ]
+    return _c("div", { staticClass: "app-page-title" }, [
+      _c("div", { staticClass: "page-title-wrapper" }, [
+        _c("div", { staticClass: "page-title-heading" }, [
+          _c("div", { staticClass: "page-title-icon" }, [
+            _c("i", { staticClass: "pe-7s-rocket icon-gradient bg-mean-fruit" })
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v("User Managements\n                    "),
+            _c("div", { staticClass: "page-title-subheading" }, [
+              _vm._v(
+                "\n                        Control and manage your users. Be careful on credential status and users.\n                    "
               )
             ])
           ])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "card-header-tab card-header-tab-animation card-header" },
+      [
+        _c("div", { staticClass: "card-header-title" }, [
+          _vm._v(
+            "\n                        User Management\n                    "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("No.")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Role")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+        },
+        [_c("i", { staticClass: "pe-7s-look btn-icon-wrapper" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-success"
+        },
+        [_c("i", { staticClass: "pe-7s-pen btn-icon-wrapper" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "mb-2 mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+        },
+        [_c("i", { staticClass: "pe-7s-trash btn-icon-wrapper" })]
+      )
     ])
   }
 ]
@@ -58038,6 +59183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_DataResult_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/DataResult.vue */ "./resources/js/components/DataResult.vue");
 /* harmony import */ var _components_UserGuide_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/UserGuide.vue */ "./resources/js/components/UserGuide.vue");
 /* harmony import */ var _components_ChemicalData_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/ChemicalData.vue */ "./resources/js/components/ChemicalData.vue");
+/* harmony import */ var _components_newChemicalData_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/newChemicalData.vue */ "./resources/js/components/newChemicalData.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -58051,6 +59197,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  // Axios.defaults.withCredentials = true
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"], vue_axios__WEBPACK_IMPORTED_MODULE_1___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
+
 
 
 
@@ -58093,6 +59240,12 @@ var routes = [{
   component: _components_ChemicalData_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
   meta: {
     title: 'Chemical Data Lists | Dashboard mineCare'
+  }
+}, {
+  path: '/new/chemical-data-lists',
+  component: _components_newChemicalData_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+  meta: {
+    title: 'New /Chemical Data Lists | Dashboard mineCare'
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -58457,6 +59610,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/newChemicalData.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/newChemicalData.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newChemicalData.vue?vue&type=template&id=4c934f21& */ "./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21&");
+/* harmony import */ var _newChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newChemicalData.vue?vue&type=script&lang=js& */ "./resources/js/components/newChemicalData.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _newChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/newChemicalData.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/newChemicalData.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/newChemicalData.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_newChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./newChemicalData.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newChemicalData.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_newChemicalData_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./newChemicalData.vue?vue&type=template&id=4c934f21& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newChemicalData.vue?vue&type=template&id=4c934f21&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newChemicalData_vue_vue_type_template_id_4c934f21___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/user.vue":
 /*!******************************************!*\
   !*** ./resources/js/components/user.vue ***!
@@ -58467,15 +59689,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_vue_vue_type_template_id_e039bdd4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.vue?vue&type=template&id=e039bdd4& */ "./resources/js/components/user.vue?vue&type=template&id=e039bdd4&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user.vue?vue&type=script&lang=js& */ "./resources/js/components/user.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _user_vue_vue_type_template_id_e039bdd4___WEBPACK_IMPORTED_MODULE_0__["render"],
   _user_vue_vue_type_template_id_e039bdd4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -58489,6 +59713,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/user.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/user.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/user.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./user.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
